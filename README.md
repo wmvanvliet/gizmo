@@ -20,7 +20,7 @@ For example:
 >> import gizmo
 ```
 
-[Learn how to fork, branch and submit a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests)
+[Learn how to fork, branch and submit a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests)  
 [Learn how to create a Python module](https://docs.python.org/3.8/tutorial/modules.html)
 
 ## Exercise 2: Create a Class
