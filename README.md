@@ -63,10 +63,13 @@ Ariel
 [Learn how to add methods to your class](https://docs.python.org/3/tutorial/classes.html#method-objects)
 
 ## Exercise 5: Add a property to your class.
-Modify your class such that it has a `friendship_name` property. The formula to
+Modify your class such that it has a `friendship_name` property. A property is
+a method that you can access like you would an attribute. The formula to
 computing a friendship name is to reverse the name given upon creation of the
 class (stored in the `.name` attribute), reverse it and capitalize only the
-first letter (all other letters should be in lower case).
+first letter (all other letters should be in lower case). This computation
+should happen "live", i.e. whenever the `friendship_name` property is being
+accessed.
 
 For example:
 ```python
@@ -74,6 +77,9 @@ For example:
 >>> g = Gizmo('Ariel')
 >>> g.friendship_name
 Leira
+>>> g.name = 'New name'  # Assign Gizmo a new name
+>>> g.friendship_name    # Friendship name is being re-computed
+Eman wen
 ```
 
 [Learn how to add a property](https://docs.python.org/3/library/functions.html#property)
