@@ -1,7 +1,7 @@
 # file for python testing test
 class Gizmo:
 
-  def _init_(self, name):
+  def __init__(self, name):
     self.name = name
   
   def speak():
