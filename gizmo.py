@@ -1,5 +1,5 @@
 # file for python testing test
-class Gizmo
+class Gizmo:
 
   def _init_(self, name):
     self.name = name
