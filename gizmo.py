@@ -4,7 +4,7 @@ class Gizmo:
   def __init__(self, name):
     self.name = name
   
-  def speak():
+  def speak(self):
     print(self.name)
   
   @property
