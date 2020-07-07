@@ -11,5 +11,5 @@ class Gizmo:
   def friendship_name(self):
     """ The friendship name, i.e. the name, reversed and capitalized as a proper noun """
     inv_name=self.name[::-1]
-    print(inv_name.casefold().capitalize())
+    return inv_name.casefold().capitalize()
   
