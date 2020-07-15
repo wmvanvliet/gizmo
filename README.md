@@ -83,3 +83,18 @@ Eman wen
 ```
 
 [Learn how to add a property](https://docs.python.org/3/library/functions.html#property)
+
+
+## Exercise 6: Use a loop
+Add a `.spell()` method to your class that spells out its name, with dots between the 
+letters, using a loop.
+
+For example:
+```python
+>>> from gizmo import Gizmo
+>>> g = Gizmo('Ariel')
+>>> g.spell()
+A.r.i.e.l
+```
+
+[Learn how to write a for loop in Python](https://docs.python.org/3.8/tutorial/controlflow.html#for-statements)
