@@ -86,8 +86,8 @@ Eman wen
 
 
 ## Exercise 6: Use a loop
-Add a `.spell()` method to your class that spells out its name, with dots between the 
-letters, using a loop.
+Add a `.spell()` method to your `Gizmo` class that uses the `print()` function to spell out its name, with dots between the 
+letters. Use a `for`-loop to implement this.
 
 For example:
 ```python
