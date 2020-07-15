@@ -33,7 +33,7 @@ def test_ex5():
     g.name = 'Test'
     assert g.friendship_name == 'Tset'
 
-def text_ex6(capsys):
+def test_ex6(capsys):
     """Ex6: spell out the name letter by letter using a loop, with dots in between"""
     import gizmo
     g = gizmo.Gizmo('Frankfurter')
