@@ -37,9 +37,9 @@ def text_ex6(capsys):
     """Ex6: spell out the name letter by letter using a loop, with dots in between"""
     import gizmo
     g = gizmo.Gizmo('Frankfurter')
-    assert hasattr(g, spell)
+    assert hasattr(g, 'spell')
     assert g.spell
-    g.spell
+    g.spell()
     captured = capsys.readouterr()
     assert captured.out.strip() == "F.r.a.n.k.f.u.r.t.e.r"
 
