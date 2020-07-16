@@ -43,3 +43,10 @@ def test_ex6(capsys):
     captured = capsys.readouterr()
     assert captured.out.strip() == "F.r.a.n.k.f.u.r.t.e.r"
 
+def test_ex7(capsys)
+    """Ex7: return a list of relative paths given a list of subject identifiers"""
+    import gizmo
+    subjects = ['subj1','subj2']
+    flist = gizmo.relative_path(subjects)
+    assert flist[0]=="./subjects/MockRecording_subj1.rec"
+    assert flist[1]=="./subjects/MockRecording_subj2.rec"

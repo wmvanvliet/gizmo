@@ -98,3 +98,19 @@ A.r.i.e.l
 ```
 
 [Learn how to write a for loop in Python](https://docs.python.org/3.8/tutorial/controlflow.html#for-statements)
+
+## Exercise 7 Using string formatting
+Reading a bunch of files with only small differences in their filenames is a very common 
+occurrence in any research code. Please extend the gizmo module with a method relative_path() 
+that will return a list of files, includung their relative path following the following pattern:
+```text
+" ./subjects/mock_recording_<subject_identifier>.rec"
+``` 
+For example:
+```python
+>>> import gizmo
+>>> subject_identifiers = ["subject1","subject2"]
+>>> names = gizmo.relative_path(subject_identifiers)
+>>> print(names)
+"./subjects/mock_recording_subject1.rec" "./subjects/mock_recording_subject2.rec"
+```
