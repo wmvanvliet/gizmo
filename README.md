@@ -109,9 +109,11 @@ array([[  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12],
        [ 12,  24,  36,  48,  60,  72,  84,  96, 108, 120, 132, 144]])
 ```
 
+[Learn about NumPy arrays](https://numpy.org/doc/stable/user/quickstart.html#the-basics)
+
 ## Exercise 11: Numpy fancy indexing
 Modify the `multiplication_table` function so that it takes a parameter called
-`zero_out_multiples`. When this parameter is set of an integer number, then the
+`zero_out_multiples`. When this parameter is set to an integer number, then the
 multiplication table that is returned by the function will have all multiples
 of the given number set to zero. The default value of the `zero_out_multiples`
 parameter should be ``None``, meaning that no numbers will be set to zero.
@@ -134,5 +136,5 @@ array([[  1,   2,   3,   4,   0,   6,   7,   8,   9,   0,  11,  12],
        [ 12,  24,  36,  48,   0,  72,  84,  96, 108,   0, 132, 144]])
 ```
 
-[Learn about the modulo operator](https://docs.python.org/3.3/reference/expressions.html#binary-arithmetic-operations)
+[Learn about the modulo (%) operator](https://docs.python.org/3.3/reference/expressions.html#binary-arithmetic-operations)  
 [Learn about NumPy array boolean indexing](https://numpy.org/doc/stable/reference/arrays.indexing.html#boolean-array-indexing)
