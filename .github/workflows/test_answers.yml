@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        exercise: [ex1, ex2, ex3, ex4, ex5]
+        exercise: [ex1, ex2, ex3, ex4, ex5, ex10, ex11]
 
     steps:
     - uses: actions/checkout@v2
