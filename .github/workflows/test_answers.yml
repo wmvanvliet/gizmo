@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        exercise: [ex1, ex2, ex3, ex4, ex5]
+        exercise: [ex1, ex2, ex3, ex4, ex5, ex10, ex11]
 
     steps:
     - uses: actions/checkout@v2
@@ -26,7 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest
+        pip install pytest numpy
     - name: Test answer to ${{ matrix.exercise }}
       run: |
         python -m pytest .tests/test_gizmo.py::test_${{ matrix.exercise }}
