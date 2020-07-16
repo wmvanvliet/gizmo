@@ -33,6 +33,7 @@ def test_ex5():
     g.name = 'Test'
     assert g.friendship_name == 'Tset'
 
+
 def test_ex6(capsys):
     """Ex6: spell out the name letter by letter using a loop, with dots in between"""
     import gizmo
@@ -50,3 +51,36 @@ def test_ex7():
     flist = gizmo.relative_path(subjects)
     assert flist[0]=="./subjects/mock_recording_subj1.rec"
     assert flist[1]=="./subjects/mock_recording_subj2.rec"
+
+def test_ex10():
+    """Ex10: Add a NumPy array"""
+    import numpy as np
+    from numpy.testing import assert_equal
+    import gizmo
+    assert hasattr(gizmo, 'multiplication_table')
+    assert hasattr(gizmo.multiplication_table, '__call__')
+    prod_table = gizmo.multiplication_table()
+    assert type(prod_table) == np.ndarray
+    ref_table = np.outer(np.arange(1, 13), np.arange(1, 13))
+    assert_equal(prod_table, ref_table)
+
+def test_ex11():
+    """Ex11: Numpy fancy indexing"""
+    import numpy as np
+    from numpy.testing import assert_equal
+    import gizmo
+    assert hasattr(gizmo, 'multiplication_table')
+    assert hasattr(gizmo.multiplication_table, '__call__')
+    prod_table = gizmo.multiplication_table()
+    assert type(prod_table) == np.ndarray
+    ref_table = np.outer(np.arange(1, 13), np.arange(1, 13))
+    assert_equal(prod_table, ref_table)
+
+    # Test zero_out_multiples parameter
+    assert_equal(prod_table, gizmo.multiplication_table(None))
+    prod_table_without_3 = gizmo.multiplication_table(zero_out_multiples=3)
+    assert type(prod_table_without_3) == np.ndarray
+    ref_table_without_3 = ref_table.copy()
+    ref_table_without_3[ref_table_without_3 % 3 == 0] = 0
+    assert_equal(prod_table_without_3, ref_table_without_3)
+
