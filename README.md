@@ -102,15 +102,21 @@ A.r.i.e.l
 ## Exercise 7 Using string formatting
 Reading a bunch of files with only small differences in their filenames is a very common 
 occurrence in any research code. Please extend the gizmo module with a method relative_path() 
-that will return a list of files, includung their relative path following the following pattern:
+that will return a list of files, including their relative path following the following pattern:
 ```text
 " ./subjects/mock_recording_<subject_identifier>.rec"
 ``` 
+where <subject_identifier> is any string. Subject identifiers will be passed to the method as a 
+list of strings.
+
 For example:
 ```python
 >>> import gizmo
 >>> subject_identifiers = ["subject1","subject2"]
 >>> names = gizmo.relative_path(subject_identifiers)
 >>> print(names)
-"./subjects/mock_recording_subject1.rec" "./subjects/mock_recording_subject2.rec"
+['./subjects/mock_recording_subject1.rec', './subjects/mock_recording_subject2.rec']
 ```
+[Getting started with string formatting](https://realpython.com/python-f-strings/)
+
+[If you want to go into more detail you can also check the python documentation here.](https://docs.python.org/3.4/library/string.html)
