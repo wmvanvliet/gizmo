@@ -86,8 +86,8 @@ Eman wen
 
 
 ## Exercise 6: Use a loop
-Add a `.spell()` method to your class that spells out its name, with dots between the 
-letters, using a loop.
+Add a `.spell()` method to your `Gizmo` class that uses the `print()` function to spell out its name, with dots between the 
+letters. Use a `for`-loop to implement this.
 
 For example:
 ```python
@@ -120,3 +120,4 @@ For example:
 [Getting started with string formatting](https://realpython.com/python-f-strings/)
 
 [If you want to go into more detail you can also check the python documentation here.](https://docs.python.org/3.4/library/string.html)
+
