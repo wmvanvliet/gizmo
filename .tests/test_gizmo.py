@@ -49,8 +49,8 @@ def test_ex7():
     import gizmo
     subjects = ['subj1', 'subj2']
     flist = gizmo.relative_path(subjects)
-    assert flist[0]=="./subjects/mock_recording_subj1.rec"
-    assert flist[1]=="./subjects/mock_recording_subj2.rec"
+    assert flist[0] == "./subjects/mock_recording_subj1.rec"
+    assert flist[1] == "./subjects/mock_recording_subj2.rec"
 
 def test_ex10():
     """Ex10: Add a NumPy array"""
