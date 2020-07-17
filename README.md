@@ -112,7 +112,7 @@ list of strings.
 For example:
 ```python
 >>> import gizmo
->>> subject_identifiers = ["subject1","subject2"]
+>>> subject_identifiers = ["subject1", "subject2"]
 >>> names = gizmo.relative_path(subject_identifiers)
 >>> print(names)
 ['./subjects/mock_recording_subject1.rec', './subjects/mock_recording_subject2.rec']
