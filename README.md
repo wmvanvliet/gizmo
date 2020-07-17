@@ -84,6 +84,44 @@ Eman wen
 
 [Learn how to add a property](https://docs.python.org/3/library/functions.html#property)
 
+
+## Exercise 6: Use a loop
+Add a `.spell()` method to your `Gizmo` class that uses the `print()` function to spell out its name, with dots between the 
+letters. Use a `for`-loop to implement this.
+
+For example:
+```python
+>>> from gizmo import Gizmo
+>>> g = Gizmo('Ariel')
+>>> g.spell()
+A.r.i.e.l
+```
+
+[Learn how to write a for loop in Python](https://docs.python.org/3.8/tutorial/controlflow.html#for-statements)
+
+## Exercise 7 Using string formatting
+Reading a bunch of files with only small differences in their filenames is a very common 
+occurrence in any research code. Please extend the gizmo module with a method relative_path() 
+that will return a list of files, including their relative path following the following pattern:
+```text
+" ./subjects/mock_recording_<subject_identifier>.rec"
+``` 
+where <subject_identifier> is any string. Subject identifiers will be passed to the method as a 
+list of strings.
+
+For example:
+```python
+>>> import gizmo
+>>> subject_identifiers = ["subject1", "subject2"]
+>>> names = gizmo.relative_path(subject_identifiers)
+>>> print(names)
+['./subjects/mock_recording_subject1.rec', './subjects/mock_recording_subject2.rec']
+```
+[Getting started with string formatting](https://realpython.com/python-f-strings/)
+
+[If you want to go into more detail you can also check the python documentation here.](https://docs.python.org/3.4/library/string.html)
+
+
 ## Exercise 10: Add a NumPy array.
 Modify the `gizmo` module such that it has a `multiplication_table` function.
 This function should return a two-dimensional NumPy array (i.e. a matrix) that
@@ -118,9 +156,6 @@ multiplication table that is returned by the function will have all multiples
 of the given number set to zero. The default value of the `zero_out_multiples`
 parameter should be ``None``, meaning that no numbers will be set to zero.
 
-For example:
-```python
->>> import gizmo
 >>> gizmo.multiplication_table(zero_out_multiples=5)
 array([[  1,   2,   3,   4,   0,   6,   7,   8,   9,   0,  11,  12],
        [  2,   4,   6,   8,   0,  12,  14,  16,  18,   0,  22,  24],

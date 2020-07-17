@@ -24,7 +24,7 @@ def test_ex4(capsys):
     captured = capsys.readouterr()
     assert captured.out.strip() == 'Frankfurter'
 
-def test_ex5(capsys):
+def test_ex5():
     """Ex5: add a property to the Gizmo class"""
     import gizmo
     g = gizmo.Gizmo('Frankfurter')
@@ -32,6 +32,25 @@ def test_ex5(capsys):
     assert g.friendship_name == 'Retrufknarf'
     g.name = 'Test'
     assert g.friendship_name == 'Tset'
+
+
+def test_ex6(capsys):
+    """Ex6: spell out the name letter by letter using a loop, with dots in between"""
+    import gizmo
+    g = gizmo.Gizmo('Frankfurter')
+    assert hasattr(g, 'spell')
+    assert g.spell
+    g.spell()
+    captured = capsys.readouterr()
+    assert captured.out.strip() == "F.r.a.n.k.f.u.r.t.e.r"
+
+def test_ex7():
+    """Ex7: return a list of relative paths given a list of subject identifiers"""
+    import gizmo
+    subjects = ['subj1', 'subj2']
+    flist = gizmo.relative_path(subjects)
+    assert flist[0] == "./subjects/mock_recording_subj1.rec"
+    assert flist[1] == "./subjects/mock_recording_subj2.rec"
 
 def test_ex10():
     """Ex10: Add a NumPy array"""
@@ -64,3 +83,4 @@ def test_ex11():
     ref_table_without_3 = ref_table.copy()
     ref_table_without_3[ref_table_without_3 % 3 == 0] = 0
     assert_equal(prod_table_without_3, ref_table_without_3)
+
