@@ -5,6 +5,12 @@ it. Upon PR submission, the GitHub action robots will check your code and
 report back how well you did. You can then add more commits to your PR until
 all tests come back green, which means you win!
 
+The exerices are meant to test your knowledge of some important features of the
+Python programming language and the [NumPy](https://numpy.org) library. When it's
+not immediately obvious to you how to solve an exercise using only a few lines of
+code, it is likely you can learn a new Python trick by checking the links below
+the exercise.
+
 
 ## Exercise 1: Make a pull request
 
@@ -43,7 +49,7 @@ Hello Gizmo, how are things in Finland?
 ## Exercise 3: Use a loop
 Add a `spell()` function to the `gizmo` module that uses the `print()` function
 to spell out the word given as a parameter to the function, with dots between
-the letters. Use a `for`-loop to implement this.
+the letters. Use a `for`-loop to implement this (no `split`/`join`).
 
 For example:
 ```python
