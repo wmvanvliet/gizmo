@@ -4,12 +4,10 @@ def hello(name, country='Finland'):
     print(f'Hello {name}, how are things in {country}?')
 
 def spell(word):
-    to_print = []
     for w in word[:-1]:
-        to_print.append(w)
-        to_print.append('.')
-    to_print.append(w[-1])
-    print(to_print)
+        print(w, end='')
+        print('.', end='')
+    print(word[-1], end='')
 
 def relative_path(subjects):
     return [f'./subjects/mock_recording_{subj}.rec' for subj in subjects]
