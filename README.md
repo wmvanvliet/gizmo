@@ -5,6 +5,7 @@ it. Upon PR submission, the GitHub action robots will check your code and
 report back how well you did. You can then add more commits to your PR until
 all tests come back green, which means you win!
 
+
 ## Exercise 1: Make a pull request
 
  1. Fork this repository
@@ -17,13 +18,69 @@ When the `gizmo.py` exists, there should be `gizmo` python module that you can i
 For example:
 
 ```python
->> import gizmo
+>>> import gizmo
 ```
 
 [Learn how to fork, branch and submit a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests)  
 [Learn how to create a Python module](https://docs.python.org/3.8/tutorial/modules.html)
 
-## Exercise 2: Create a Class
+
+## Exercise 2: Create a function
+Add a `hello()` function to the `gizmo` module. The function should take two parameters: `name` and `country`. The `country` parameter is optional and should default to `'Finland'`. When called, the function uses the `print()` function to write the text `Hello {name}, how are things in {country}?` to the screen, where `{name}` and `{country}` should be the name and country given as parameters.
+
+For example:
+```python
+>>> import gizmo
+>>> gizmo.hello('Gizmo', 'Germany')
+Hello Gizmo, how are things in Germany?
+>>> gizmo.hello('Gizmo')
+Hello Gizmo, how are things in Finland?
+```
+
+[Learn how to define functions in Python](https://docs.python.org/3.8/tutorial/controlflow.html#defining-functions)
+
+
+## Exercise 3: Use a loop
+Add a `spell()` function to the `gizmo` module that uses the `print()` function
+to spell out the word given as a parameter to the function, with dots between
+the letters. Use a `for`-loop to implement this.
+
+For example:
+```python
+>>> import gizmo
+>>> gizmo.spell('hello')
+h.e.l.l.o
+```
+
+[Learn how to write a for loop in Python](https://docs.python.org/3.8/tutorial/controlflow.html#for-statements)
+
+
+## Exercise 4: Use string formatting
+Reading a bunch of files with only small differences in their filenames is a
+very common occurrence in any research code. Add a function `relative_path()`
+to the `gizmo` module that returns a list of files, including their relative
+path, following the following pattern:
+```text
+'./subjects/mock_recording_<subject_identifier>.rec'
+``` 
+where `<subject_identifier>` is any string. Subject identifiers will be passed
+to the method as a list of strings.
+
+For example:
+```python
+>>> import gizmo
+>>> subject_identifiers = ['subject1', 'subject2']
+>>> names = gizmo.relative_path(subject_identifiers)
+>>> print(names)
+['./subjects/mock_recording_subject1.rec', './subjects/mock_recording_subject2.rec']
+```
+
+[Get started with string formatting](https://realpython.com/python-f-strings/)
+
+[If you want to go into more detail you can also check the python documentation here.](https://docs.python.org/3.4/library/string.html)
+
+
+## Exercise 5: Create a Class
 Add a class called `Gizmo` to your `gizmo.py` module.
 
 For example:
@@ -33,7 +90,8 @@ For example:
 ```
 [Learn how to create a Python class](https://docs.python.org/3.8/tutorial/classes.html)
 
-## Exercise 3: Add an attribute to your class.
+
+## Exercise 6: Add an attribute to your class
 Modify your class such that when you create a new instance of `Gizmo`, you can give it a name.
 The name is a string.
 Afterwards, the name should be available as the `.name` attribute.
@@ -48,7 +106,8 @@ For example:
 
 [Learn how to add attributes](https://docs.python.org/3.8/tutorial/classes.html#class-object)
 
-## Exercise 4: Add a method to your class.
+
+## Exercise 7: Add a method to your class
 Modify your class such that it has a `.speak()` method. Calling this method
 will make the `Gizmo` object print its name using the `print()` function.
 
@@ -62,7 +121,8 @@ Ariel
 
 [Learn how to add methods to your class](https://docs.python.org/3/tutorial/classes.html#method-objects)
 
-## Exercise 5: Add a property to your class.
+
+## Exercise 8: Add a property to your class
 Modify your class such that it has a `friendship_name` property. A property is
 a method that you can access like you would an attribute. The formula to
 computing a friendship name is to reverse the name given upon creation of the
@@ -85,49 +145,12 @@ Eman wen
 [Learn how to add a property](https://docs.python.org/3/library/functions.html#property)
 
 
-## Exercise 6: Use a loop
-Add a `.spell()` method to your `Gizmo` class that uses the `print()` function to spell out its name, with dots between the 
-letters. Use a `for`-loop to implement this.
-
-For example:
-```python
->>> from gizmo import Gizmo
->>> g = Gizmo('Ariel')
->>> g.spell()
-A.r.i.e.l
-```
-
-[Learn how to write a for loop in Python](https://docs.python.org/3.8/tutorial/controlflow.html#for-statements)
-
-## Exercise 7 Using string formatting
-Reading a bunch of files with only small differences in their filenames is a very common 
-occurrence in any research code. Please extend the gizmo module with a method relative_path() 
-that will return a list of files, including their relative path following the following pattern:
-```text
-" ./subjects/mock_recording_<subject_identifier>.rec"
-``` 
-where <subject_identifier> is any string. Subject identifiers will be passed to the method as a 
-list of strings.
-
-For example:
-```python
->>> import gizmo
->>> subject_identifiers = ["subject1", "subject2"]
->>> names = gizmo.relative_path(subject_identifiers)
->>> print(names)
-['./subjects/mock_recording_subject1.rec', './subjects/mock_recording_subject2.rec']
-```
-[Getting started with string formatting](https://realpython.com/python-f-strings/)
-
-[If you want to go into more detail you can also check the python documentation here.](https://docs.python.org/3.4/library/string.html)
-
-
-## Exercise 10: Add a NumPy array.
+## Exercise 9: Add a NumPy array
 Modify the `gizmo` module such that it has a `multiplication_table` function.
 This function should return a two-dimensional NumPy array (i.e. a matrix) that
 contains the [multiplication table from 1 to 12](
 https://multiplicationtablecharts.com/wp-content/uploads/2019/12/Multiplication-Table.jpg)
-that you had to learn in elementary school.
+that you had to learn in elementary school. A quick way to generate this table is to take the outer product of two vectors with numbers from 1 to 12.
 
 For example:
 ```python
@@ -147,15 +170,19 @@ array([[  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12],
        [ 12,  24,  36,  48,  60,  72,  84,  96, 108, 120, 132, 144]])
 ```
 
-[Learn about NumPy arrays](https://numpy.org/doc/stable/user/quickstart.html#the-basics)
+[Learn about NumPy arrays](https://numpy.org/doc/stable/user/quickstart.html#the-basics)  
+[Learn about the outer product](https://numpy.org/doc/stable/reference/generated/numpy.outer.html)
 
-## Exercise 11: Numpy fancy indexing
+
+## Exercise 10: Use Numpy' fancy indexing
 Modify the `multiplication_table` function so that it takes a parameter called
 `zero_out_multiples`. When this parameter is set to an integer number, then the
 multiplication table that is returned by the function will have all multiples
-of the given number set to zero. The default value of the `zero_out_multiples`
-parameter should be ``None``, meaning that no numbers will be set to zero.
+of the given number set to zero. Use NumPy's boolean indexing to accomplish
+this. The default value of the `zero_out_multiples` parameter should be
+``None``, meaning that no numbers will be set to zero.
 
+```python
 >>> gizmo.multiplication_table(zero_out_multiples=5)
 array([[  1,   2,   3,   4,   0,   6,   7,   8,   9,   0,  11,  12],
        [  2,   4,   6,   8,   0,  12,  14,  16,  18,   0,  22,  24],
@@ -171,5 +198,5 @@ array([[  1,   2,   3,   4,   0,   6,   7,   8,   9,   0,  11,  12],
        [ 12,  24,  36,  48,   0,  72,  84,  96, 108,   0, 132, 144]])
 ```
 
-[Learn about the modulo (%) operator](https://docs.python.org/3.3/reference/expressions.html#binary-arithmetic-operations)  
+[Learn about the modulo (%) operator](https://docs.python.org/3.8/reference/expressions.html#binary-arithmetic-operations)  
 [Learn about NumPy array boolean indexing](https://numpy.org/doc/stable/reference/arrays.indexing.html#boolean-array-indexing)
