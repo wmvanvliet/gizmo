@@ -64,7 +64,7 @@ path, following the following pattern:
 './subjects/mock_recording_<subject_identifier>.rec'
 ``` 
 where `<subject_identifier>` is any string. Subject identifiers will be passed
-to the method as a list of strings.
+to the function as a list of strings.
 
 For example:
 ```python
@@ -75,8 +75,7 @@ For example:
 ['./subjects/mock_recording_subject1.rec', './subjects/mock_recording_subject2.rec']
 ```
 
-[Get started with string formatting](https://realpython.com/python-f-strings/)
-
+[Get started with string formatting](https://realpython.com/python-f-strings/)  
 [If you want to go into more detail you can also check the python documentation here.](https://docs.python.org/3.6/library/string.html)
 
 
