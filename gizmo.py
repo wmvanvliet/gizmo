@@ -24,6 +24,23 @@ class Gizmo:
         return self.name[::-1].title()
 
 def multiplication_table(zero_out_multiples=None):
+    """Construct a multiplication table.
+
+    This function constructs a multiplication table with the numbers 1 to 12,
+    like the one you had to learn in elementary school. Optionally, if you
+    don't like certain numbers, you can zero out multiples of them.
+
+    Parameters
+    ----------
+    zero_out_multiples : int, optional
+        When specified, all numbers that are multiples of the given value are
+        set to zero in the table.
+
+    Returns
+    -------
+    table : array (12, 12)
+        The multiplication table. Possibly with values zero-ed out.
+    """
     table = np.outer(np.arange(1, 13), np.arange(1, 13))
     if zero_out_multiples is not None:
         table[table % zero_out_multiples == 0] = 0
