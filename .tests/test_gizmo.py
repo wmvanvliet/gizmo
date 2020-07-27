@@ -66,16 +66,7 @@ def test_ex7(capsys):
     assert captured.out.strip() == 'Frankfurter'
 
 def test_ex8():
-    """Ex8: Add a property to your class"""
-    import gizmo
-    g = gizmo.Gizmo('Frankfurter')
-    assert hasattr(g, 'friendship_name')
-    assert g.friendship_name == 'Retrufknarf'
-    g.name = 'Test'
-    assert g.friendship_name == 'Tset'
-
-def test_ex9():
-    """Ex9: Add a NumPy array"""
+    """Ex8: Add a NumPy array"""
     import numpy as np
     from numpy.testing import assert_equal
     import gizmo
@@ -86,8 +77,8 @@ def test_ex9():
     ref_table = np.outer(np.arange(1, 13), np.arange(1, 13))
     assert_equal(prod_table, ref_table)
 
-def test_ex10():
-    """Ex10: Use Numpy's fancy indexing"""
+def test_ex9():
+    """Ex9: Use Numpy's fancy indexing"""
     import numpy as np
     from numpy.testing import assert_equal
     import gizmo
@@ -105,3 +96,21 @@ def test_ex10():
     ref_table_without_3 = ref_table.copy()
     ref_table_without_3[ref_table_without_3 % 3 == 0] = 0
     assert_equal(prod_table_without_3, ref_table_without_3)
+
+def test_ex10():
+    """Ex10: Document your function using numpydoc"""
+    from numpydoc.docscrape import FunctionDoc
+    import gizmo
+    assert hasattr(gizmo, 'multiplication_table')
+    assert hasattr(gizmo.multiplication_table, '__doc__')
+    doc = FunctionDoc(gizmo.multiplication_table)
+    assert doc['Summary'] != ''
+    assert doc['Extended Summary'] != ''
+    assert len(doc['Parameters']) == 1
+    assert doc['Parameters'][0].name != ''
+    assert doc['Parameters'][0].type != ''
+    assert doc['Parameters'][0].desc != ''
+    assert len(doc['Returns']) == 1
+    assert doc['Returns'][0].name != ''
+    assert doc['Returns'][0].type != ''
+    assert doc['Returns'][0].desc != ''
