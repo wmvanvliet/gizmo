@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pytest numpy
+        pip install pytest numpy numpydoc
     - name: Test answer to ${{ matrix.exercise }}
       run: |
         python -m pytest .tests/test_gizmo.py::test_${{ matrix.exercise }}
