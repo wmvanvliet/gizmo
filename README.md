@@ -104,7 +104,7 @@ For example:
 'Ariel'
 ```
 
-[Learn how to add attributes](https://docs.python.org/3.6/tutorial/classes.html#class-object)
+[Learn how to add attributes](https://docs.python.org/3.6/tutorial/classes.html#class-objects)
 
 
 ## Exercise 7: Add a method to your class
