@@ -1,5 +1,8 @@
 import numpy as np
 
+def hello(name, county='Finland'):
+    print(f'Hello {name}, how are things in {country}?')
+
 def spell(word):
     to_print = []
     for w in word[:-1]:
