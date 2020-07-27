@@ -1,6 +1,6 @@
 import numpy as np
 
-def hello(name, county='Finland'):
+def hello(name, country='Finland'):
     print(f'Hello {name}, how are things in {country}?')
 
 def spell(word):
