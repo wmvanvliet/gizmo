@@ -22,7 +22,7 @@ For example:
 ```
 
 [Learn how to fork, branch and submit a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests)  
-[Learn how to create a Python module](https://docs.python.org/3.8/tutorial/modules.html)
+[Learn how to create a Python module](https://docs.python.org/3.6/tutorial/modules.html)
 
 
 ## Exercise 2: Create a function
@@ -37,7 +37,7 @@ Hello Gizmo, how are things in Germany?
 Hello Gizmo, how are things in Finland?
 ```
 
-[Learn how to define functions in Python](https://docs.python.org/3.8/tutorial/controlflow.html#defining-functions)
+[Learn how to define functions in Python](https://docs.python.org/3.6/tutorial/controlflow.html#defining-functions)
 
 
 ## Exercise 3: Use a loop
@@ -52,7 +52,7 @@ For example:
 h.e.l.l.o
 ```
 
-[Learn how to write a for loop in Python](https://docs.python.org/3.8/tutorial/controlflow.html#for-statements)
+[Learn how to write a for loop in Python](https://docs.python.org/3.6/tutorial/controlflow.html#for-statements)
 
 
 ## Exercise 4: Use string formatting
@@ -77,7 +77,7 @@ For example:
 
 [Get started with string formatting](https://realpython.com/python-f-strings/)
 
-[If you want to go into more detail you can also check the python documentation here.](https://docs.python.org/3.4/library/string.html)
+[If you want to go into more detail you can also check the python documentation here.](https://docs.python.org/3.6/library/string.html)
 
 
 ## Exercise 5: Create a Class
@@ -88,7 +88,7 @@ For example:
 >>> from gizmo import Gizmo
 >>> g = Gizmo()
 ```
-[Learn how to create a Python class](https://docs.python.org/3.8/tutorial/classes.html)
+[Learn how to create a Python class](https://docs.python.org/3.6/tutorial/classes.html)
 
 
 ## Exercise 6: Add an attribute to your class
@@ -104,7 +104,7 @@ For example:
 'Ariel'
 ```
 
-[Learn how to add attributes](https://docs.python.org/3.8/tutorial/classes.html#class-object)
+[Learn how to add attributes](https://docs.python.org/3.6/tutorial/classes.html#class-object)
 
 
 ## Exercise 7: Add a method to your class
@@ -119,7 +119,7 @@ For example:
 Ariel
 ```
 
-[Learn how to add methods to your class](https://docs.python.org/3/tutorial/classes.html#method-objects)
+[Learn how to add methods to your class](https://docs.python.org/3.6/tutorial/classes.html#method-objects)
 
 
 ## Exercise 8: Add a property to your class
@@ -142,7 +142,7 @@ Leira
 Eman wen
 ```
 
-[Learn how to add a property](https://docs.python.org/3/library/functions.html#property)
+[Learn how to add a property](https://docs.python.org/3.6/library/functions.html#property)
 
 
 ## Exercise 9: Add a NumPy array
@@ -174,7 +174,7 @@ array([[  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12],
 [Learn about the outer product](https://numpy.org/doc/stable/reference/generated/numpy.outer.html)
 
 
-## Exercise 10: Use Numpy' fancy indexing
+## Exercise 10: Use Numpy's fancy indexing
 Modify the `multiplication_table` function so that it takes a parameter called
 `zero_out_multiples`. When this parameter is set to an integer number, then the
 multiplication table that is returned by the function will have all multiples
@@ -198,5 +198,5 @@ array([[  1,   2,   3,   4,   0,   6,   7,   8,   9,   0,  11,  12],
        [ 12,  24,  36,  48,   0,  72,  84,  96, 108,   0, 132, 144]])
 ```
 
-[Learn about the modulo (%) operator](https://docs.python.org/3.8/reference/expressions.html#binary-arithmetic-operations)  
+[Learn about the modulo (%) operator](https://docs.python.org/3.6/reference/expressions.html#binary-arithmetic-operations)  
 [Learn about NumPy array boolean indexing](https://numpy.org/doc/stable/reference/arrays.indexing.html#boolean-array-indexing)
