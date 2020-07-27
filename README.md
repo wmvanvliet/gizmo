@@ -67,9 +67,9 @@ very common occurrence in any research code. Add a function `relative_path()`
 to the `gizmo` module that returns a list of files, including their relative
 path, following the following pattern:
 ```text
-'./subjects/mock_recording_<subject_identifier>.rec'
+'./subjects/mock_recording_{subject_identifier}.rec'
 ``` 
-where `<subject_identifier>` is any string. Subject identifiers will be passed
+where `{subject_identifier}` is any string. Subject identifiers will be passed
 to the function as a list of strings.
 
 For example:
