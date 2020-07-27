@@ -122,30 +122,7 @@ Ariel
 [Learn how to add methods to your class](https://docs.python.org/3.6/tutorial/classes.html#method-objects)
 
 
-## Exercise 8: Add a property to your class
-Modify your class such that it has a `friendship_name` property. A property is
-a method that you can access like you would an attribute. The formula to
-computing a friendship name is to reverse the name given upon creation of the
-class (stored in the `.name` attribute), reverse it and capitalize only the
-first letter (all other letters should be in lower case). This computation
-should happen "live", i.e. whenever the `friendship_name` property is being
-accessed.
-
-For example:
-```python
->>> from gizmo import Gizmo
->>> g = Gizmo('Ariel')
->>> g.friendship_name
-Leira
->>> g.name = 'New name'  # Assign Gizmo a new name
->>> g.friendship_name    # Friendship name is being re-computed
-Eman wen
-```
-
-[Learn how to add a property](https://docs.python.org/3.6/library/functions.html#property)
-
-
-## Exercise 9: Add a NumPy array
+## Exercise 8: Add a NumPy array
 Modify the `gizmo` module such that it has a `multiplication_table` function.
 This function should return a two-dimensional NumPy array (i.e. a matrix) that
 contains the [multiplication table from 1 to 12](
@@ -174,7 +151,7 @@ array([[  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12],
 [Learn about the outer product](https://numpy.org/doc/stable/reference/generated/numpy.outer.html)
 
 
-## Exercise 10: Use Numpy's fancy indexing
+## Exercise 9: Use Numpy's fancy indexing
 Modify the `multiplication_table` function so that it takes a parameter called
 `zero_out_multiples`. When this parameter is set to an integer number, then the
 multiplication table that is returned by the function will have all multiples
@@ -200,3 +177,22 @@ array([[  1,   2,   3,   4,   0,   6,   7,   8,   9,   0,  11,  12],
 
 [Learn about the modulo (%) operator](https://docs.python.org/3.6/reference/expressions.html#binary-arithmetic-operations)  
 [Learn about NumPy array boolean indexing](https://numpy.org/doc/stable/reference/arrays.indexing.html#boolean-array-indexing)
+
+
+## Exercise 10: Document your function using numpydoc
+Add a docstring to the `multiplication_table` function. Use the "numpydoc" style
+for this documentation. The documentation should contain:
+
+ 1. Short summary: a one-line description of what the function does.
+ 2. Extended summary: A longer description with more details about what the function does.
+ 3. Parameters: a list of all parameters that the function takes. For each parameter, describe:
+     1. The parameter name
+     2. Its expected type (int, bool, str, array, ...)
+     3. What the parameter does
+ 4. Returns: a list of all values returned by the function. For each return value,  describe:
+     1. The returned value's name
+     2. Its type (int, bool, str, array, ...)
+     3. What the returned value means
+
+[Learn about docstrings](https://docs.python.org/3.6/tutorial/controlflow.html#documentation-strings)  
+[Learn about the numpydoc documentation style](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)
