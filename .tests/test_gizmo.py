@@ -40,8 +40,8 @@ def test_ex4():
     flist = gizmo.relative_path(subjects)
     assert flist[0] == "./subjects/mock_recording_subj1.rec"
     assert flist[1] == "./subjects/mock_recording_subj2.rec"
-    assert flist[1] == "./subjects/mock_recording_subj3.rec"
-    assert flist[1] == "./subjects/mock_recording_subj4.rec"
+    assert flist[2] == "./subjects/mock_recording_subj3.rec"
+    assert flist[3] == "./subjects/mock_recording_subj4.rec"
 
 def test_ex5():
     """Ex5: Create a class"""
