@@ -1,5 +1,13 @@
 import numpy as np
 
+def spell(word):
+    to_print = []
+    for w in word[:-1]:
+        to_print.append(w)
+        to_print.append('.')
+    to_print.append(w[-1])
+    print(to_print)
+
 class Gizmo:
     def __init__(self, name):
         self.name = name
