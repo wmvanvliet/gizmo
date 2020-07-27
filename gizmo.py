@@ -11,6 +11,9 @@ def spell(word):
     to_print.append(w[-1])
     print(to_print)
 
+def relative_path(subjects):
+    return [f'./subjects/mock_recording_{subj}.rec' for subj in subjects]
+
 class Gizmo:
     def __init__(self, name):
         self.name = name
