@@ -183,13 +183,13 @@ array([[  1,   2,   3,   4,   0,   6,   7,   8,   9,   0,  11,  12],
 Add a docstring to the `multiplication_table` function. Use the "numpydoc" style
 for this documentation. The documentation should contain:
 
- 1. A one-line description of what the function does.
- 2. A longer description with more details about what the function does.
- 3. A list of all parameters that the function takes. For each parameter, describe:
+ 1. Short summary: a one-line description of what the function does.
+ 2. Extended summary: A longer description with more details about what the function does.
+ 3. Parameters: a list of all parameters that the function takes. For each parameter, describe:
      1. The parameter name
      2. Its expected type (int, bool, str, array, ...)
      3. What the parameter does
- 4. A list of all values returned by the function. For each return value,  describe:
+ 4. Returns: a list of all values returned by the function. For each return value,  describe:
      1. The returned value's name
      2. Its type (int, bool, str, array, ...)
      3. What the returned value means
