@@ -12,3 +12,7 @@ def spell(word):
 def relative_path(ids):
     return [os.path.join('.', 'subjects', f'mock_recording_{i}.rec')
             for i in ids]
+
+
+class Gizmo:
+    pass
