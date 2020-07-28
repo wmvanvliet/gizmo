@@ -1,3 +1,4 @@
+import numpy as np
 import os.path
 
 
@@ -20,3 +21,8 @@ class Gizmo:
 
     def speak(self):
         print(self.name)
+
+
+def multiplication_table():
+    count = np.range(1, 12)
+    return np.out(count, count)
