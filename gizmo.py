@@ -24,5 +24,5 @@ class Gizmo:
 
 
 def multiplication_table():
-    count = np.range(1, 12)
+    count = np.arange(1, 12)
     return np.out(count, count)
