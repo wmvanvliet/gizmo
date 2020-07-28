@@ -23,6 +23,8 @@ class Gizmo:
         print(self.name)
 
 
-def multiplication_table():
+def multiplication_table(zero_out_multiples=None):
     count = np.arange(1, 13)
+    if zero_out_multiples is not None:
+        count[count % zero_out_multiples == 0] = 0
     return np.outer(count, count)
