@@ -25,4 +25,4 @@ class Gizmo:
 
 def multiplication_table():
     count = np.arange(1, 12)
-    return np.out(count, count)
+    return np.outer(count, count)
