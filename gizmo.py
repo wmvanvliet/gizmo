@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 def hello(name, country='Finland'):
     print(f'Hello {name}, how are things in {country}?')
@@ -45,3 +46,21 @@ def multiplication_table(zero_out_multiples=None):
     if zero_out_multiples is not None:
         table[table % zero_out_multiples == 0] = 0
     return table
+
+def generate_fibonacci_sequence(n):
+    a = 0
+    b = 1
+    yield a
+    yield b
+    for _ in range(n - 2):
+        a, b = b, a + b
+        yield b
+
+def get_fibonacci_sequence(n):
+    return np.array(list(generate_fibonacci_sequence(n)))
+
+def get_titanic():
+    return pd.read_csv('titanic.csv')
+
+def get_titanic_children():
+    return get_titanic().query('age <= 12')
