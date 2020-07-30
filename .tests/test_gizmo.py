@@ -148,7 +148,7 @@ def test_ex11():
         218922995834555169026
     ]
 
-def test_ex12:
+def test_ex12():
     """Ex12: Build a NumPy array from a generator"""
     import gizmo
     import numpy as np
@@ -159,31 +159,33 @@ def test_ex12:
     assert_equal(gizmo.get_fibonacci_sequence(10),
                  np.array([0, 1, 1, 2, 3, 5, 8, 13, 21, 34]))
 
-def test_ex13:
+def test_ex13():
     """Ex13: Read a CSV file with Pandas"""
     from numpy.testing import assert_equal
+    import numpy as np
     import gizmo
     assert hasattr(gizmo, 'get_titanic')
     assert hasattr(gizmo.get_titanic, '__call__')
     df = gizmo.get_titanic()
     assert len(df) == 891
     assert_equal(
-        df.colums.values,
+        df.columns.values,
         np.array([
             'survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
             'embarked', 'class', 'who', 'adult_male', 'deck', 'embark_town',
             'alive', 'alone']))
 
-def test_ex14:
+def test_ex14():
     """Ex14: Select rows from a Pandas DataFrame"""
+    from numpy.testing import assert_equal
     import numpy as np
     import gizmo
     assert hasattr(gizmo, 'get_titanic_children')
     assert hasattr(gizmo.get_titanic_children, '__call__')
     df = gizmo.get_titanic_children()
-    assert len(df) == 68
+    assert len(df) == 69
     assert_equal(
-        df.colums.values,
+        df.columns.values,
         np.array([
             'survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
             'embarked', 'class', 'who', 'adult_male', 'deck', 'embark_town',
