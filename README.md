@@ -5,6 +5,12 @@ it. Upon PR submission, the GitHub action robots will check your code and
 report back how well you did. You can then add more commits to your PR until
 all tests come back green, which means you win!
 
+The exerices are meant to test your knowledge of some important features of the
+Python programming language and the [NumPy](https://numpy.org) library. When it's
+not immediately obvious to you how to solve an exercise using only a few lines of
+code, it is likely you can learn a new Python trick by checking the links below
+the exercise.
+
 
 ## Exercise 1: Make a pull request
 
@@ -43,7 +49,7 @@ Hello Gizmo, how are things in Finland?
 ## Exercise 3: Use a loop
 Add a `spell()` function to the `gizmo` module that uses the `print()` function
 to spell out the word given as a parameter to the function, with dots between
-the letters. Use a `for`-loop to implement this.
+the letters. Use a `for`-loop to implement this (no `split`/`join`).
 
 For example:
 ```python
@@ -61,10 +67,10 @@ very common occurrence in any research code. Add a function `relative_path()`
 to the `gizmo` module that returns a list of files, including their relative
 path, following the following pattern:
 ```text
-'./subjects/mock_recording_<subject_identifier>.rec'
+'./subjects/mock_recording_{subject_identifier}.rec'
 ``` 
-where `<subject_identifier>` is any string. Subject identifiers will be passed
-to the method as a list of strings.
+where `{subject_identifier}` is any string. Subject identifiers will be passed
+to the function as a list of strings.
 
 For example:
 ```python
@@ -75,8 +81,7 @@ For example:
 ['./subjects/mock_recording_subject1.rec', './subjects/mock_recording_subject2.rec']
 ```
 
-[Get started with string formatting](https://realpython.com/python-f-strings/)
-
+[Get started with string formatting](https://realpython.com/python-f-strings/)  
 [If you want to go into more detail you can also check the python documentation here.](https://docs.python.org/3.6/library/string.html)
 
 
@@ -178,7 +183,6 @@ array([[  1,   2,   3,   4,   0,   6,   7,   8,   9,   0,  11,  12],
 [Learn about the modulo (%) operator](https://docs.python.org/3.6/reference/expressions.html#binary-arithmetic-operations)  
 [Learn about NumPy array boolean indexing](https://numpy.org/doc/stable/reference/arrays.indexing.html#boolean-array-indexing)
 
-
 ## Exercise 10: Document your function using numpydoc
 Add a docstring to the `multiplication_table` function. Use the "numpydoc" style
 for this documentation. The documentation should contain:
@@ -196,3 +200,116 @@ for this documentation. The documentation should contain:
 
 [Learn about docstrings](https://docs.python.org/3.6/tutorial/controlflow.html#documentation-strings)  
 [Learn about the numpydoc documentation style](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)
+
+## Exercise 11: Build a generator
+Add a function `generate_fibonacci_sequence(n)` to your `gizmo` module that will be a generator that `yield`s the first `n` numbers of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
+
+For example:
+```python
+>>> import gizmo
+>>> fib = gizmo.generate_fibonacci_sequence(n)
+>>> while(True):
+>>>     print(next(fib))
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+```
+
+[Learn about Python generators](https://www.programiz.com/python-programming/generator)
+
+
+## Exercise 12: Build a NumPy array from a generator
+Add a function `get_fibonacci_sequence(n)` to your `gizmo` module that takes a single parameter `n` and returns a NumPy array of the first `n` Fibonacci numbers. This function should use the generator you build in exercise 11 to generate the numbers, store them in a list and return the list in the form of a NumPy array.
+
+For example:
+```python
+>>> import gizmo
+>>> gizmo.get_fibonacci_sequence(10)
+array([ 0,  1,  1,  2,  3,  5,  8, 13, 21, 34])
+```
+
+[How do I build a NumPy array from a generator?](https://stackoverflow.com/questions/367565/how-do-i-build-a-numpy-array-from-a-generator)
+
+## Exercise 13: Read a CSV file with Pandas
+The Gizmo git repository has a CSV in it called `titanic.csv`. This file contains information about all the passengers that were on board the Titanic when it sank. Add a function `get_titanic()` to your `gizmo` module that uses [Pandas](https://pandas.pydata.org/) to load the CSV file and return it as a `DataFrame`.
+
+For example:
+```python
+>>> import gizmo
+>>> gizmo.get_titanic().head(5)
+     survived  pclass     sex   age  sibsp  parch     fare embarked   class  \
+0           0       3    male  22.0      1      0   7.2500        S   Third   
+1           1       1  female  38.0      1      0  71.2833        C   First   
+2           1       3  female  26.0      0      0   7.9250        S   Third   
+3           1       1  female  35.0      1      0  53.1000        S   First   
+4           0       3    male  35.0      0      0   8.0500        S   Third   
+..        ...     ...     ...   ...    ...    ...      ...      ...     ...   
+886         0       2    male  27.0      0      0  13.0000        S  Second   
+887         1       1  female  19.0      0      0  30.0000        S   First   
+888         0       3  female   NaN      1      2  23.4500        S   Third   
+889         1       1    male  26.0      0      0  30.0000        C   First   
+890         0       3    male  32.0      0      0   7.7500        Q   Third   
+
+       who  adult_male deck  embark_town alive  alone  
+0      man        True  NaN  Southampton    no  False  
+1    woman       False    C    Cherbourg   yes  False  
+2    woman       False  NaN  Southampton   yes   True  
+3    woman       False    C  Southampton   yes  False  
+4      man        True  NaN  Southampton    no   True  
+..     ...         ...  ...          ...   ...    ...  
+886    man        True  NaN  Southampton    no   True  
+887  woman       False    B  Southampton   yes   True  
+888  woman       False  NaN  Southampton    no  False  
+889    man        True    C    Cherbourg   yes   True  
+890    man        True  NaN   Queenstown    no   True  
+
+[891 rows x 15 columns]
+```
+
+[Learn about the Pandas package](https://pandas.pydata.org/docs/getting_started/index.html#intro-to-pandas)  
+[Learn about reading CSV data with Pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/02_read_write.html#how-do-i-read-and-write-tabular-data)
+
+## Exercise 14: Select rows from a Pandas DataFrame
+Add a function `get_titanic_children()` to your `gizmo` module. This function should read the `titanic.csv` file in this git repository and return a Pandas `DataFrame` with all the children, age ≤ 12, that were on board the Titanic when it sunk.
+
+For example:
+```python
+>>> import gizmo
+>>> gizmo.get_titanic_children()
+     survived  pclass     sex   age  sibsp  parch     fare embarked   class  \
+7           0       3    male  2.00      3      1  21.0750        S   Third   
+10          1       3  female  4.00      1      1  16.7000        S   Third   
+16          0       3    male  2.00      4      1  29.1250        Q   Third   
+24          0       3  female  8.00      3      1  21.0750        S   Third   
+43          1       2  female  3.00      1      2  41.5792        C  Second   
+..        ...     ...     ...   ...    ...    ...      ...      ...     ...   
+827         1       2    male  1.00      0      2  37.0042        C  Second   
+831         1       2    male  0.83      1      1  18.7500        S  Second   
+850         0       3    male  4.00      4      2  31.2750        S   Third   
+852         0       3  female  9.00      1      1  15.2458        C   Third   
+869         1       3    male  4.00      1      1  11.1333        S   Third   
+
+       who  adult_male deck  embark_town alive  alone  
+7    child       False  NaN  Southampton    no  False  
+10   child       False    G  Southampton   yes  False  
+16   child       False  NaN   Queenstown    no  False  
+24   child       False  NaN  Southampton    no  False  
+43   child       False  NaN    Cherbourg   yes  False  
+..     ...         ...  ...          ...   ...    ...  
+827  child       False  NaN    Cherbourg   yes  False  
+831  child       False  NaN  Southampton   yes  False  
+850  child       False  NaN  Southampton    no  False  
+852  child       False  NaN    Cherbourg    no  False  
+869  child       False  NaN  Southampton   yes  False  
+
+[69 rows x 15 columns]
+```
+
+[Learn how to select rows from a Pandas `DataFrame`](https://pandas.pydata.org/docs/getting_started/intro_tutorials/03_subset_data.html#how-do-i-select-a-subset-of-a-dataframe)
