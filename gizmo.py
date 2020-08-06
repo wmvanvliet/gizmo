@@ -60,20 +60,21 @@ out : ndarray
     
     return out
        
-  def generate_fibonacci_sequence(n):
-    n1, n2 = 0, 1
-    cnt = 0
-    if n==0:
-        return
-    elif n==1:
-        yield(n1)
-    elif n>1:
-        while cnt < n:
-            yield(n1)
-            nth = n1 + n2
-            yield(nth)
-            # update values
-            n1 = n2
-            n2 = nth
-            cnt += 2
+    
+def generate_fibonacci_sequence(n):
+  n1, n2 = 0, 1
+  cnt = 0
+  if n==0:
+    return
+  elif n==1:
+    return(n1)
+  elif n>1:
+    while cnt < n:
+      yield(n1)
+      nth = n1 + n2
+      yield(nth)
+      # update values
+      n1 = n2
+      n2 = nth
+      cnt += 2
     
