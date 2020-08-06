@@ -37,8 +37,8 @@ class Gizmo:
 def multiplication_table(zero_out_multiples = None):
     """Multiplication table from 1 to 12.
 
-    Summary
-    =========
+    Description
+    =============
     This function returns the multiplication table from 1 to 12 as a 2-dimensional array.
     If given a number as an input, the function will display all multiples of this number as zero.
 
@@ -64,7 +64,7 @@ def multiplication_table(zero_out_multiples = None):
 # Exercise 11
 def generate_fibonacci_sequence(n):
     n1, n2 = 0, 1
-    cnt = 0
+    cnt = 2
     if n==0:
         yield()  
     elif n==1:
