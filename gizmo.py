@@ -71,6 +71,7 @@ def generate_fibonacci_sequence(n):
         yield(n1)
     elif n>1:
         yield(n1)
+        yield(n2)
         while cnt < n:
             nth = n1 + n2
             yield(nth)
