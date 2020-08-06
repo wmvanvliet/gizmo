@@ -37,21 +37,23 @@ class Gizmo:
 def multiplication_table(zero_out_multiples = None):
     """Multiplication table from 1 to 12.
 
-This function returns the multiplication table from 1 to 12 as a 2-dimensional array.
-If given a number as an input, the function will display all multiples of this number as zero.
+    Summary
+    =========
+    This function returns the multiplication table from 1 to 12 as a 2-dimensional array.
+    If given a number as an input, the function will display all multiples of this number as zero.
 
-Parameters
-__________
+    Parameters
+    ===========
 
-zero_out_multiples : int, optional
-    If 'zero_out_multiples' is defined, the function will display all multiples of 'zero_out_multiples' as zero.
-    The default value of 'zero_out_multiples' is None.
+    :zero_out_multiples: int, optional
+        If 'zero_out_multiples' is defined, the function will display all multiples of 'zero_out_multiples' as zero.
+        The default value of 'zero_out_multiples' is None.
 
-Returns
-_______
-out : ndarray
-    The function returns a 2-dimensonal NumPy array (i.e. a matrix) that contains the multiplication table from 1 to 12.
-"""
+    Returns
+    =========
+    :out: ndarray
+        The function returns a 2-dimensonal NumPy array (i.e. a matrix) that contains the multiplication table from 1 to 12.
+    """
     a = np.arange(1, 13)
     b = a
     out = np.outer(a, b)
