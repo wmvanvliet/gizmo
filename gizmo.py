@@ -68,14 +68,14 @@ def generate_fibonacci_sequence(n):
     elif n==1:
         yield(n1)
     elif n>1:
+        yield(n1)
         while cnt < n:
-            yield(n1)
             nth = n1 + n2
             yield(nth)
             # update values
             n1 = n2
             n2 = nth
-            cnt += 2
+            cnt += 1
 
 # Exercise 12
 def get_fibonacci_sequence(n):
