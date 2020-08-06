@@ -89,5 +89,18 @@ def get_fibonacci_sequence(n):
         cnt += 1
     return seq
 
+# Exercise 13
+
+import pandas as pd
+
+def get_titanic():
+    titanic = pd.read_csv('titanic.csv')
+    return titanic
+
+# Exercise 14
+def get_titanic_children():
+    tit = get_titanic()
+    chd = tit[tit["Age"] <= 12]
+    return chd
 
     
