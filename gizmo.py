@@ -45,15 +45,13 @@ def multiplication_table(zero_out_multiples = None):
     Parameters
     ===========
 
-    :zero_out_multiples: int, optional
-    
-    If 'zero_out_multiples' is defined, the function will display all multiples of 'zero_out_multiples' as zero.
-    The default value of 'zero_out_multiples' is None.
+    zero_out_multiples: int, optional
+        If 'zero_out_multiples' is defined, the function will display all multiples of 'zero_out_multiples' as zero. The default value of 'zero_out_multiples' is None.
 
     Returns
     =========
-    :out: ndarray
-    The function returns a 2-dimensonal NumPy array (i.e. a matrix) that contains the multiplication table from 1 to 12.
+    out: ndarray
+        The function returns a 2-dimensonal NumPy array (i.e. a matrix) that contains the multiplication table from 1 to 12.
     """
     a = np.arange(1, 13)
     b = a
