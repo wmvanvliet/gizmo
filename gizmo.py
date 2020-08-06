@@ -100,7 +100,7 @@ def get_titanic():
 # Exercise 14
 def get_titanic_children():
     tit = get_titanic()
-    chd = tit[tit["Age"] <= 12]
+    chd = tit[tit["age"] <= 12]
     return chd
 
     
