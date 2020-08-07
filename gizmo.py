@@ -39,7 +39,7 @@ def relative_path(ids: List[str], path_fmt: str = "./subjects/mock_recording_{id
     return [path_fmt.format(id=_id) for _id in ids]
 
 
-def multiplication_table(n: int=12, zero_out_multiples: int=None):
+def multiplication_table_n(n: int=12, zero_out_multiples: int=None):
     """Returns a 2-dimensional multiplication table for size `n`.
 
     A multiplication table will contain all the multiples 1x1, 1x2, ..., 1xn 
@@ -53,11 +53,11 @@ def multiplication_table(n: int=12, zero_out_multiples: int=None):
 
     Parameters
     ----------
-    n : int
-        Size of returned array 1...n
-
     zero_out_multiples : int or None
         Multiples of this number are 'zeroed out' in the array.
+
+    n : int
+        Size of returned array 1...n
 
     Returns
     -------
@@ -66,10 +66,36 @@ def multiplication_table(n: int=12, zero_out_multiples: int=None):
 
     """
     ns = arange(n, dtype=int)+1   # Counting starts from 1
-    arr = outerproduct(ns, ns)
+    arr = array(outerproduct(ns, ns))
     if zero_out_multiples is not None:
         arr[arr % zero_out_multiples == 0] = 0
     return arr
+
+
+def multiplication_table(zero_out_multiples: int=None):
+    """Returns a 2-dimensional multiplication table for size 12.
+
+    A multiplication table will contain all the multiples 1x1, 1x2, ..., 1xn 
+    on the first row; 2x1, 2x2, ..., 2xn on the seconds row; until nx1, nx2,
+    ..., nxn on the last row.
+
+    Certain multiples can be 'zeroed out' by giving the parameter `zero_out_multiples`.
+    For example, giving the value '2' will make all even numbers zero on the 
+    output array.
+
+
+    Parameters
+    ----------
+    zero_out_multiples : int or None
+        Multiples of this number are 'zeroed out' in the array.
+
+    Returns
+    -------
+    multiplication_tbl : numpy.ndarray
+        nxn sized array of type int.
+
+    """
+    return multiplication_table_n(12, zero_out_multiples)
 
 
 def generate_fibonacci_sequence(n: int):
