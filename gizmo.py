@@ -53,3 +53,7 @@ def generate_fibonacci_sequence(n):
         c = a + b
         a = b
         b = c
+
+
+def get_fibonacci_sequence(n):
+    return np.array(list(generate_fibonacci_sequence(n)))
