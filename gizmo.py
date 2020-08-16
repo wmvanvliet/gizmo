@@ -24,5 +24,8 @@ def relative_path(subject_identifiers):
     ]
 
 
-def multiplication_table():
-    return np.outer(np.arange(1, 13), np.arange(1, 13))
+def multiplication_table(zero_out_multiples=None):
+    array = np.arange(1, 13)
+    if zero_out_multiples:
+        array[array % zero_out_multiples == 0] = 0
+    return np.outer(array, array)
