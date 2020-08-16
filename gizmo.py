@@ -2,6 +2,10 @@ class Gizmo:
     def __init__(self, name):
         self.name = name
 
+    def speak(self):
+        print(self.name)
+
+
 def hello(name, country="Finland"):
     print(f"Hello {name}, how are things in {country}?")
 
