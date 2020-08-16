@@ -43,3 +43,13 @@ def multiplication_table(zero_out_multiples=None):
     if zero_out_multiples:
         array[array % zero_out_multiples == 0] = 0
     return np.outer(array, array)
+
+
+def generate_fibonacci_sequence(n):
+    a = 0
+    b = 1
+    for _ in range(n):
+        yield a
+        c = a + b
+        a = b
+        b = c
