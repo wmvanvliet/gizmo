@@ -1,5 +1,6 @@
 class Gizmo:
-    pass
+    def __init__(self, name):
+        self.name = name
 
 def hello(name, country="Finland"):
     print(f"Hello {name}, how are things in {country}?")
