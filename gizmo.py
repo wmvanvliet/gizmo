@@ -44,9 +44,10 @@ def multiplication_table(zero_out_multiples=None):
         Multiplication table
     """
     array = np.arange(1, 13)
-    if zero_out_multiples:
-        array[array % zero_out_multiples == 0] = 0
-    return np.outer(array, array)
+    result = np.outer(array, array)
+    if zero_out_multiples is not None:
+        result[result % zero_out_multiples == 0] = 0
+    return result
 
 
 def generate_fibonacci_sequence(n):
