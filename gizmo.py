@@ -15,7 +15,10 @@ def hello(name, country="Finland"):
 
 
 def spell(word):
-    print(".".join(word))
+    result = ""
+    for c in word:
+        result = result + c + "."
+    print(result[:-1])
 
 
 def relative_path(subject_identifiers):
