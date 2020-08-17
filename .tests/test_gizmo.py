@@ -1,6 +1,10 @@
+import pytest
+
+
 def test_ex1():
     """Ex1: Create a module called gizmo"""
     import gizmo  # noqa
+
 
 def test_ex2(capsys):
     """Ex2: Create a function"""
@@ -20,14 +24,22 @@ def test_ex2(capsys):
     captured = capsys.readouterr()
     assert captured.out.strip() == 'Hello foo, how are things in Finland?'
 
+
 def test_ex3(capsys):
     """Ex3: Use a loop"""
     import gizmo
+    import inspect
     assert hasattr(gizmo, 'spell')
     assert gizmo.spell
+    code = inspect.getsource(gizmo.spell)
+    if 'split' in code or 'join' in code:
+        raise RuntimeError('No split() or join() allowed')
+    if 'for' not in code:
+        raise RuntimeError('Use a for-loop to solve this exercise')
     gizmo.spell('Frankfurter')
     captured = capsys.readouterr()
     assert captured.out.strip() == "F.r.a.n.k.f.u.r.t.e.r"
+
 
 def test_ex4():
     """Ex4: Use string formatting"""
@@ -43,10 +55,12 @@ def test_ex4():
     assert flist[2] == "./subjects/mock_recording_subj3.rec"
     assert flist[3] == "./subjects/mock_recording_subj4.rec"
 
+
 def test_ex5():
     """Ex5: Create a class"""
     import gizmo
     assert type(gizmo.Gizmo) == type
+
 
 def test_ex6():
     """Ex6: Add an attribute to your class"""
@@ -54,6 +68,7 @@ def test_ex6():
     g = gizmo.Gizmo('Frankfurter')
     assert type(g) == gizmo.Gizmo
     assert g.name == 'Frankfurter'
+
 
 def test_ex7(capsys):
     """Ex7: Add a method to your class"""
@@ -64,6 +79,7 @@ def test_ex7(capsys):
     g.speak()
     captured = capsys.readouterr()
     assert captured.out.strip() == 'Frankfurter'
+
 
 def test_ex8():
     """Ex8: Add a NumPy array"""
@@ -76,6 +92,7 @@ def test_ex8():
     assert type(prod_table) == np.ndarray
     ref_table = np.outer(np.arange(1, 13), np.arange(1, 13))
     assert_equal(prod_table, ref_table)
+
 
 def test_ex9():
     """Ex9: Use Numpy's fancy indexing"""
@@ -91,11 +108,15 @@ def test_ex9():
 
     # Test zero_out_multiples parameter
     assert_equal(prod_table, gizmo.multiplication_table(None))
-    prod_table_without_3 = gizmo.multiplication_table(zero_out_multiples=3)
-    assert type(prod_table_without_3) == np.ndarray
-    ref_table_without_3 = ref_table.copy()
-    ref_table_without_3[ref_table_without_3 % 3 == 0] = 0
-    assert_equal(prod_table_without_3, ref_table_without_3)
+
+    # We don't check 0, it's fine to let it raise exceptions in that case
+    for n in range(1, 13):
+        prod_table_without_n = gizmo.multiplication_table(zero_out_multiples=n)
+        assert type(prod_table_without_n) == np.ndarray
+        ref_table_without_n = ref_table.copy()
+        ref_table_without_n[ref_table_without_n % n == 0] = 0
+        assert_equal(prod_table_without_n, ref_table_without_n)
+
 
 def test_ex10():
     """Ex10: Document your function using numpydoc"""
@@ -115,13 +136,16 @@ def test_ex10():
     assert doc['Returns'][0].type != ''
     assert doc['Returns'][0].desc != ''
 
+
 def test_ex11():
     """Ex11: Build a generator"""
     import gizmo
     assert hasattr(gizmo, 'generate_fibonacci_sequence')
     assert hasattr(gizmo.generate_fibonacci_sequence, '__call__')
-    first3 = list(gizmo.generate_fibonacci_sequence(3))
-    assert first3 == [0, 1, 1]
+    assert list(gizmo.generate_fibonacci_sequence(0)) == []
+    assert list(gizmo.generate_fibonacci_sequence(1)) == [0]
+    assert list(gizmo.generate_fibonacci_sequence(2)) == [0, 1]
+    assert list(gizmo.generate_fibonacci_sequence(3)) == [0, 1, 1]
     first10 = list(gizmo.generate_fibonacci_sequence(10))
     assert first10 == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
     first100 = list(gizmo.generate_fibonacci_sequence(100))
@@ -147,6 +171,9 @@ def test_ex11():
         51680708854858323072, 83621143489848422977, 135301852344706746049,
         218922995834555169026
     ]
+    with pytest.raises(StopIteration):
+        next(gizmo.generate_fibonacci_sequence(0))
+
 
 def test_ex12():
     """Ex12: Build a NumPy array from a generator"""
@@ -158,6 +185,7 @@ def test_ex12():
     assert_equal(gizmo.get_fibonacci_sequence(3), np.array([0, 1, 1]))
     assert_equal(gizmo.get_fibonacci_sequence(10),
                  np.array([0, 1, 1, 2, 3, 5, 8, 13, 21, 34]))
+
 
 def test_ex13():
     """Ex13: Read a CSV file with Pandas"""
@@ -174,6 +202,7 @@ def test_ex13():
             'survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
             'embarked', 'class', 'who', 'adult_male', 'deck', 'embark_town',
             'alive', 'alone']))
+
 
 def test_ex14():
     """Ex14: Select rows from a Pandas DataFrame"""
