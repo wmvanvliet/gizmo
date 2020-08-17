@@ -108,11 +108,14 @@ def test_ex9():
 
     # Test zero_out_multiples parameter
     assert_equal(prod_table, gizmo.multiplication_table(None))
-    prod_table_without_3 = gizmo.multiplication_table(zero_out_multiples=3)
-    assert type(prod_table_without_3) == np.ndarray
-    ref_table_without_3 = ref_table.copy()
-    ref_table_without_3[ref_table_without_3 % 3 == 0] = 0
-    assert_equal(prod_table_without_3, ref_table_without_3)
+
+    # We don't check 0, it's fine to let it raise exceptions in that case
+    for n in range(1, 13):
+        prod_table_without_n = gizmo.multiplication_table(zero_out_multiples=n)
+        assert type(prod_table_without_n) == np.ndarray
+        ref_table_without_n = ref_table.copy()
+        ref_table_without_n[ref_table_without_n % n == 0] = 0
+        assert_equal(prod_table_without_n, ref_table_without_n)
 
 
 def test_ex10():
