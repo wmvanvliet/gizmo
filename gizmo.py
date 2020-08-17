@@ -55,9 +55,7 @@ def generate_fibonacci_sequence(n):
     b = 1
     for _ in range(n):
         yield a
-        c = a + b
-        a = b
-        b = c
+        a, b = b, a + b
 
 
 def get_fibonacci_sequence(n):
