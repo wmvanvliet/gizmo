@@ -1,15 +1,16 @@
 # Can you speak Python?
 
-This is a Python challenge. Create pull requests (PR's) to this repository to solve
-it. Upon PR submission, the GitHub action robots will check your code and
+This is a Python challenge. Create pull requests (PR's) to this repository to
+solve it. Upon PR submission, the GitHub action robots will check your code and
 report back how well you did. You can then add more commits to your PR until
 all tests come back green, which means you win!
 
-The exerices are meant to test your knowledge of some important features of the
-Python programming language and the [NumPy](https://numpy.org) library. When it's
-not immediately obvious to you how to solve an exercise using only a few lines of
-code, it is likely you can learn a new Python trick by checking the links below
-the exercise.
+The exercises are meant to test your knowledge of some important features of
+the Python programming language and the [NumPy](https://numpy.org) and
+[Pandas](https://pandas.pydata.org/) libraries. When it's not immediately
+obvious to you how to solve an exercise using only a few lines of code, it is
+likely you can learn a new Python trick by checking the links below the
+exercise.
 
 
 ## Exercise 1: Make a pull request
@@ -19,7 +20,7 @@ the exercise.
  3. Add a new file `gizmo.py` to the repository
  4. Create a pull-request from your new branch to the master branch of this repository
 
-When the `gizmo.py` exists, there should be `gizmo` python module that you can import.
+When `gizmo.py` exists, there should be `gizmo` python module that you can import.
 
 For example:
 
@@ -207,7 +208,7 @@ Add a function `generate_fibonacci_sequence(n)` to your `gizmo` module that will
 For example:
 ```python
 >>> import gizmo
->>> fib = gizmo.generate_fibonacci_sequence(n)
+>>> fib = gizmo.generate_fibonacci_sequence(5)
 >>> while(True):
 >>>     print(next(fib))
 0
@@ -215,11 +216,7 @@ For example:
 1
 2
 3
-5
-8
-13
-21
-34
+StopIteration
 ```
 
 [Learn about Python generators](https://www.programiz.com/python-programming/generator)
@@ -243,7 +240,7 @@ The Gizmo git repository has a CSV in it called `titanic.csv`. This file contain
 For example:
 ```python
 >>> import gizmo
->>> gizmo.get_titanic().head(5)
+>>> gizmo.get_titanic()
      survived  pclass     sex   age  sibsp  parch     fare embarked   class  \
 0           0       3    male  22.0      1      0   7.2500        S   Third   
 1           1       1  female  38.0      1      0  71.2833        C   First   
