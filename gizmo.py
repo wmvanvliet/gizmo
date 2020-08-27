@@ -8,5 +8,5 @@ def spell(word):
   spell_word=''
   for i in word:
     spell_word=spell_word+i+'.'
-    spell_word = spell_word[:-1]
+  spell_word = spell_word[:-1]
   print(spell_word)
