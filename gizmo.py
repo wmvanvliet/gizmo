@@ -40,7 +40,8 @@ def multiplication_table(zero_out_multiples=None):
     Returns
     -------
     
-    Multiplication table: 2D NumPy array 
+    2D NumPy array 
+    Multiplication table with multiples set to zero if specified.
 
     """
     table = np.outer(np.array(range(1,13)),np.array(range(1,13)))
