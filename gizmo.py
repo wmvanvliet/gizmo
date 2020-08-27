@@ -25,11 +25,26 @@ class Gizmo():
     def speak(self): 
             print(self.name)
 
-# exercise 8,9
-def multiplication_table(zero_out_multiples = None):
+# exercise 8,9,10
+def multiplication_table(zero_out_multiples=None):
+    """ A function returning a multiplication table for 1-12.
+
+    This function returns a multiplication table for 1-12. 
+    Multiples of the specified value will be replaced with zeros.
+
+    Parameters
+    ----------
+    zero_out_multiples : int
+        Multiples of which to replace with zeros. Defaults to None.
+
+    Returns
+    -------
+    2D NumPy array 
+
+    """
     table = np.outer(np.array(range(1,13)),np.array(range(1,13)))
     if zero_out_multiples != None:
-        table[table % zero_out_multiples !=0] = 0
+        table[table % zero_out_multiples == 0] = 0
     return table
 
 
