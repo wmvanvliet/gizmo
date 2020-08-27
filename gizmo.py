@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 # exercise 2
 def hello(name, country="Finland"):
@@ -49,7 +50,27 @@ def multiplication_table(zero_out_multiples=None):
         table[table % zero_out_multiples == 0] = 0
     return table
 
+# exercise 11
+def generate_fibonacci_sequence(n):
+    prev_num = 0
+    next_num = 1
+    for i in range(n):
+        yield prev_num
+        prev_num, next_num = next_num, prev_num + next_num
+        
 
+# exercise 12
+def get_fibonacci_sequence(n):
+    return np.array(list(generate_fibonacci_sequence(n)))
+
+# exercise 13
+def get_titanic():
+    return pd.read_csv("titanic.csv")
+
+# exercise 14
+def get_titanic_children():
+    df = get_titanic()
+    return df[df.age <= 12]
 
         
     
