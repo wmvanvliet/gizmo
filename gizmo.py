@@ -25,9 +25,12 @@ class Gizmo():
     def speak(self): 
             print(self.name)
 
-# exercise 8
-def multiplication_table():
-    return np.outer(np.array(range(1,13)),np.array(range(1,13)))
+# exercise 8,9
+def multiplication_table(zero_out_multiples = None):
+    table = np.outer(np.array(range(1,13)),np.array(range(1,13)))
+    if zero_out_multiples != None:
+        table[table % zero_out_multiples !=0] = 0
+    return table
 
 
 
