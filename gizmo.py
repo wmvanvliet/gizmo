@@ -39,7 +39,8 @@ def multiplication_table(zero_out_multiples=None):
 
     Returns
     -------
-    2D NumPy array 
+    
+    Multiplication table: 2D NumPy array 
 
     """
     table = np.outer(np.array(range(1,13)),np.array(range(1,13)))
