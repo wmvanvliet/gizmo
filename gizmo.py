@@ -40,7 +40,8 @@ def multiplication_table(zero_out_multiples=None):
     Returns
     -------
     
-    2D NumPy array 
+    Multiplication table
+    2D array 
     Multiplication table with multiples set to zero if specified.
 
     """
