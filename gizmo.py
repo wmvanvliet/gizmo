@@ -22,5 +22,12 @@ def relative_path(subj):
 class Gizmo:
     def __init__(self,na):
         self.name=na
+    
     def speak(self):
         print(self.name)
+
+    def multiplication_table():
+        a=np.array([[1,2,3,4,5,6,7,8,9,10,11,12]])
+        b=np.transpose(a)
+        c=a*b
+        return c
