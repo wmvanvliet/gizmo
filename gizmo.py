@@ -22,3 +22,5 @@ def relative_path(subj):
 class Gizmo:
     def __init__(self,na):
         self.name=na
+    def speak(self):
+        print(self.name)
