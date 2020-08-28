@@ -26,8 +26,22 @@ class Gizmo:
     def speak(self):
         print(self.name)
 
-    def multiplication_table():
+    def multiplication_table(zero_out_multiples=None):
+
         a=np.array([[1,2,3,4,5,6,7,8,9,10,11,12]])
         b=np.transpose(a)
         c=a*b
-        return c
+        
+        if zero_out_multiples==None:
+            return c
+        else:
+            d=12%zero_out_multiples
+            e=(12-d)/zero_out_multiples
+            e=int(e)
+            
+            for i in range(e):
+                c[(i+1)*5-1,:]=0
+                c[:,(i+1)*5-1]=0
+            
+            return c
+          
