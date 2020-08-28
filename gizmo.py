@@ -18,3 +18,7 @@ def relative_path(subj):
       a=f"./subjects/mock_recording_{subject_identifier}.rec"
       names.append(a)
   return names
+
+class Gizmo:
+    def __init__(self,na):
+        self.name=na
