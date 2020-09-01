@@ -9,17 +9,16 @@ def hello(name, country=None):
 
 def spell(word):
     assert isinstance(word, str),"please enter a valid word, you know... with letters"
-    for letter in word:
-        if letter == word[-1]:
+    for i, letter in enumerate(word):
+        if i == len(word) - 1:
             print(letter)
         else:
             print(letter+".", end="")
 
 def relative_path(subject_identifiers):
-    rp = "./subjects/mock_recording_"
     names = []
     for identifier in subject_identifiers:
-        name = rp+identifier+".rec"
+        name = f"./subjects/mock_recording_{identifier}.rec"
         names.append(name)
     return names
 
@@ -30,7 +29,52 @@ class Gizmo(object):
     def speak(self):  
         print(self.name)  
 
-def multiplication_table():
+def multiplication_table(zero_out_multiples=None):
+    """ Returns a multiplication table form 1 to 12
+    
+    Parameters
+    ----------
+    zero_out_multiples : int, optional
+                        multiples of this parameter will be deleted
+    
+    Returns
+    -------
+    array : array
+            array type with the multiplication table from 1 to 12. If specified
+            the multiples of zero_out_multiples are set to 0.
+    """
+    if (zero_out_multiples!=None):
+        assert isinstance(zero_out_multiples,int),"please enter an integer"
+    else:
+        zero_out_multiples=0
+    
     i = np.array([1,2,3,4,5,6,7,8,9,10,11,12])
     array = np.outer(i,i)
+    
+    if zero_out_multiples!=0:
+        array[(array % zero_out_multiples == 0)] = 0
+        
     return array
+
+def generate_fibonacci_sequence(n):
+    a = 0
+    b = 1
+    for i in range(n):
+        yield a
+        a, b = b, a + b
+
+def get_fibonacci_sequence(n):
+    array=[]
+    fib = generate_fibonacci_sequence(n)
+    while(True):
+        array.append(next(fib))
+    return np.array(array)
+
+def get_titanic():
+    return pd.read_csv("./titanic.csv")
+
+def get_titanic_children():
+    df = pd.read_csv("./titanic.csv")
+    df = df[df['age'] < 13]
+    return df
+    
