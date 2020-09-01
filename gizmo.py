@@ -71,9 +71,11 @@ def get_fibonacci_sequence(n):
     return np.array(array)
 
 def get_titanic():
+    import pandas as pd
     return pd.read_csv("./titanic.csv")
 
 def get_titanic_children():
+    import pandas as pd
     df = pd.read_csv("./titanic.csv")
     df = df[df['age'] < 13]
     return df
