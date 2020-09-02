@@ -66,7 +66,7 @@ def generate_fibonacci_sequence(n):
 def get_fibonacci_sequence(n):
     array=[]
     fib = generate_fibonacci_sequence(n)
-    while(True):
+    for _ in range(n):
         array.append(next(fib))
     return np.array(array)
 
