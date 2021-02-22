@@ -31,6 +31,20 @@ class Gizmo:
 
 
 def multiplication_table(zero_out_multiples=None):
+    """Build a multiplication table.
+
+    This function builds a multiplication table from 1 to 12.
+
+    Parameters
+    ----------
+    zero_out_multiples : int
+        The multiples of this value are set to zero.
+
+    Returns
+    -------
+    np.ndarray
+        Multiplication table as a two-dimensional array.
+    """
     table_ij = np.outer(range(1, 13), range(1, 13))
     if zero_out_multiples is not None:
         flt_ij = table_ij % zero_out_multiples == 0
