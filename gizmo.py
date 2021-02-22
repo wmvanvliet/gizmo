@@ -50,3 +50,17 @@ def multiplication_table(zero_out_multiples=None):
         flt_ij = table_ij % zero_out_multiples == 0
         table_ij[flt_ij] = 0
     return table_ij
+
+
+def generate_fibonacci_sequence(n):
+    if n < 0:
+        return
+
+    vals = [0, 1]
+    for i in range(min(2, n)):
+        yield vals[i]
+
+    for i in range(2, n):
+        val = sum(vals)
+        vals = [vals[-1], val]
+        yield val
