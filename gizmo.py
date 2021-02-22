@@ -9,3 +9,11 @@ def spell(word):
     for letter in word[1:]:
         s += '.' + letter
     print(s)
+
+
+def relative_path(subject_identifiers):
+    paths = []
+    for subject in subject_identifiers:
+        path = f'./subjects/mock_recording_{subject}.rec'
+        paths.append(path)
+    return paths
