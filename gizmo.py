@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 
 def hello(name, country='Finland'):
@@ -68,3 +69,7 @@ def generate_fibonacci_sequence(n):
 
 def get_fibonacci_sequence(n):
     return np.array(list(generate_fibonacci_sequence(n)))
+
+
+def get_titanic():
+    return pd.read_csv('titanic.csv')
