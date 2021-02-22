@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def hello(name, country='Finland'):
     print(f'Hello {name}, how are things in {country}?')
 
@@ -25,3 +28,7 @@ class Gizmo:
 
     def speak(self):
         print(self.name)
+
+
+def multiplication_table():
+    return np.outer(range(1, 13), range(1, 13))
