@@ -43,7 +43,7 @@ def multiplication_table(zero_out_multiples=None):
 
     Returns
     -------
-    np.ndarray
+    table : np.ndarray
         Multiplication table as a two-dimensional array.
     """
     table_ij = np.outer(range(1, 13), range(1, 13))
