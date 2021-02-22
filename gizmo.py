@@ -64,3 +64,7 @@ def generate_fibonacci_sequence(n):
         val = sum(vals)
         vals = [vals[-1], val]
         yield val
+
+
+def get_fibonacci_sequence(n):
+    return np.array(list(generate_fibonacci_sequence(n)))
