@@ -30,5 +30,9 @@ class Gizmo:
         print(self.name)
 
 
-def multiplication_table():
-    return np.outer(range(1, 13), range(1, 13))
+def multiplication_table(zero_out_multiples=None):
+    table_ij = np.outer(range(1, 13), range(1, 13))
+    if zero_out_multiples is not None:
+        flt_ij = table_ij % zero_out_multiples == 0
+        table_ij[flt_ij] = 0
+    return table_ij
