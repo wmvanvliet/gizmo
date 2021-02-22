@@ -73,3 +73,8 @@ def get_fibonacci_sequence(n):
 
 def get_titanic():
     return pd.read_csv('titanic.csv')
+
+
+def get_titanic_children():
+    df = get_titanic()
+    return df[df['age'] <= 12]
