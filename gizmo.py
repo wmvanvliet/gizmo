@@ -124,5 +124,7 @@ def get_titanic():
 
 def get_titanic_children():
     titanic = get_titanic()
+    # Create a list of boolean values based on the condition <= 12
     is_child = titanic['age'] <= 12    
+    # filter rows for children using the boolean variables
     return titanic[is_child]         
