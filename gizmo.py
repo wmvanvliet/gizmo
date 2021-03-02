@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 def hello(name, country='Finland'):
     # These are two examples of how it can be done
@@ -117,4 +118,11 @@ def get_fibonacci_sequence(n):
         
     return array
 
-                
+def get_titanic():
+    return pd.read_csv('titanic.csv')
+    
+
+def get_titanic_children():
+    titanic = get_titanic()
+    is_child = titanic['age'] <= 12    
+    return titanic[is_child]         
