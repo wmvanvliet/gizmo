@@ -15,5 +15,21 @@ def spell(word):
             spelling += letters[i] + '.'
     print(spelling) 
 
+def relative_path(list):
+    output_list = []
+    for subject_identifier in list:
+        output_list.append(f'./subjects/mock_recording_{subject_identifier}.rec')
+    return output_list
+
+class Gizmo:
+
+    name = None
+
+    def __init__(self, name):
+        self.name = name
     
+    def speak(self):
+        print(self.name)
+
+
 
