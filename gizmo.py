@@ -26,8 +26,11 @@ class Gizmo:
         print(self.name)
 
 def multiplication_table(zero_out_multiples=None):
-    """ Calculates a multiplication table based on two vectors ranging from 0 to 12 each.
+    """ 
+    Summary: 
+    Calculates a multiplication table based on two vectors ranging from 0 to 12 each.
 
+    Extended Summary:
     The function multiplication_table caclulates a multiplication table for all numbers between 1 to 12. If the input argument zero_out_multiples is not None, multiplies of this input argument in the table will be all set to zero.
 
     Parameters
