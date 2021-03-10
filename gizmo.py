@@ -1,3 +1,6 @@
+from pandas.core.frame import DataFrame
+
+
 def hello(name,country="Finland"):
     print("Hello {0}, how are things in {1}?".format(str(name),str(country)))
 
@@ -75,3 +78,12 @@ def get_fibonacci_sequence(n):
     #Comment: I found this example, but I am still not sure, how list works on res. It is still mysterious here.
     return np.array(list(res))
         
+def get_titanic():
+    import pandas as pd
+    titanic=pd.read_csv("./titanic.csv")
+    return titanic
+
+def get_titanic_children():
+    titanic=get_titanic()
+    children=titanic.loc[titanic["age"]<=12,:]
+    return children
