@@ -21,5 +21,8 @@ def relative_path(subject_identifiers,relpath='./subjects/moc_recording'):
 class Gizmo:
     def __init__(self, name):
         self.name=name
+
+    def speak(self):
+        print(self.name)
         
 
