@@ -10,9 +10,10 @@ def spell(input_str):
 
 def relative_path(subject_identifiers,relpath='./subjects/moc_recording'):
     names=[]
-    relpath='./subjects/mock_recording_'
+    relpath='./subjects/mock_recording'
     for i in subject_identifiers:
-        res=relpath+"_"+i+".rec"
+        res="{0}_{1}.rec".format(relpath,i) #new style
+        #res=relpath+"_"+i+".rec" #old style, not good
         names.append(res)
 
     return names
