@@ -25,11 +25,27 @@ class Gizmo:
     def speak(self):
         print(self.name)
 
-def multiplication_table():
+def multiplication_table(zero_out_multiples=None):
+    """ Calculates a multiplication table based on two input vectors.
+    """
     import numpy as np
+
     a=np.arange(1,13,1)
     b=np.arange(1,13,1)
-    res=np.outer(a,b)
+
+    if zero_out_multiples is not None and isinstance(zero_out_multiples, int):
+        #Version with modulo
+        a[a%zero_out_multiples==0]=0  #okay, I learned something :-)
+        b[b%zero_out_multiples==0]=0    
+
+        #I found a version without modulo operator
+        #index=zero_out_multiples-1
+        #a[index::zero_out_multiples]=0
+        #b[index::zero_out_multiples]=0
+        res=np.outer(a,b)
+    else:
+        res=np.outer(a,b)
+    
     return res
 
 
