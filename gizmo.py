@@ -66,5 +66,8 @@ def multiplication_table(zero_out_multiples=None):
     return res
 
 
-        
-
+def generate_fibonacci_sequence(n):
+    a, b = 0, 1
+    for i in range(0, n):
+        a, b = b, a + b
+        yield a
