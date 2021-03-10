@@ -28,7 +28,7 @@ class Gizmo:
 def multiplication_table(zero_out_multiples=None):
     """ Calculates a multiplication table based on two input vectors.
     """
-    import numpy as np
+    #import numpy as np
 
     a=np.arange(1,13,1)
     b=np.arange(1,13,1)
