@@ -25,25 +25,22 @@ class Gizmo:
     def speak(self):
         print(self.name)
 
+
 def multiplication_table(zero_out_multiples=None):
     """ 
-    Summary: 
-    Calculates a multiplication table based on two vectors ranging from 0 to 12 each.
+    Calculates a multiplication table based on two vectors ranging from 1 to 12 each.
 
-    Extended Summary:
     The function multiplication_table caclulates a multiplication table for all numbers between 1 to 12. If the input argument zero_out_multiples is not None, multiplies of this input argument in the table will be all set to zero.
 
     Parameters
     ----------
-    zero_out_multiplies: 
-        Type: int
-        Description of parameter: The arg is used for the multiplication table. If it is not None, the table returned by the function will have all multiples of the given number set to zero.
+    zero_out_multiplies: type: int, default = None
+        The arg is used for the multiplication table. If it is not None, the table returned by the function will have all multiples of the given number set to zero.
 
     Returns
     -------
-    res
-        Type: numpy.ndarray
-        Description of parameter: The arg contains the calculated multiplication table. Calculation is based on the outer product.
+    res: type: numpy.ndarray
+        The arg contains the calculated multiplication table. Calculation is based on the outer product.
     """
     import numpy as np
 
@@ -65,9 +62,16 @@ def multiplication_table(zero_out_multiples=None):
     
     return res
 
-
 def generate_fibonacci_sequence(n):
-    a, b = 0, 1
+    a, b = 1, 0
     for i in range(0, n):
         a, b = b, a + b
         yield a
+
+
+def get_fibonacci_sequence(n):
+    import numpy as np
+    res=generate_fibonacci_sequence(n)
+    #Comment: I found this example, but I am still not sure, how list works on res. It is still mysterious here.
+    return np.array(list(res))
+        
