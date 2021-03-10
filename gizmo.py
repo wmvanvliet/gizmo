@@ -19,4 +19,7 @@ def relative_path(subject_identifiers,relpath='./subjects/moc_recording'):
     return names
 
 class Gizmo:
-    pass
+    def __init__(self, name):
+        self.name=name
+        
+
