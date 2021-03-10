@@ -86,4 +86,5 @@ def get_titanic():
 def get_titanic_children():
     titanic=get_titanic()
     children=titanic.loc[titanic["age"]<=12,:]
+    #children=titanic[titanic["age"]<=12] #this works, too
     return children
