@@ -42,7 +42,7 @@ def multiplication_table(zero_out_multiples=None):
 
     Returns
     -------
-    res: type: numpy.ndarray
+    res: numpy.ndarray
         The arg contains the calculated multiplication table. Calculation is based on the outer product.
     """
     import numpy as np
