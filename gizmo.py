@@ -37,12 +37,12 @@ def multiplication_table(zero_out_multiples=None):
 
     Parameters
     ----------
-    zero_out_multiples: int
+    zero_out_multiples : int
         The arg is used for the multiplication table. If it is not None, the table returned by the function will have all multiples of the given number set to zero.
 
     Returns
     -------
-    res: numpy.ndarray
+    res : numpy.ndarray
         The arg contains the calculated multiplication table. Calculation is based on the outer product.
     """
     import numpy as np
