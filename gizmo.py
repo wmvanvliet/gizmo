@@ -1,5 +1,6 @@
 import numpy as np
 import numpydoc
+import pandas as pd
 
 def hello(name, country = 'Finland'):
     print('Hello ', name, ', how are things in ', country, '?', sep = '')
@@ -60,13 +61,17 @@ def generate_fibonacci_sequence(n):
 def get_fibonacci_sequence(n):
     n1 = 0
     n2 = 1
-    count = 0
-    fib = []
-    fib_array = np.empty(predict_legth())
-    while count < n:
-        fib.append(n1)
+    fib_array = np.empty(n)
+    for i in range(n):
+        fib_array[i] = n1
         nn = n1 + n2
         n1 = n2
         n2 = nn
-        count += 1
-    return(fib)
+    return(fib_array)
+
+def get_titanic():
+    return pd.read_csv("titanic.csv")
+
+def get_titanic_children():
+    df = pd.read_csv("titanic.csv")
+    return df[(df["who"] == "child") & (df["age"] <= 12)] 
