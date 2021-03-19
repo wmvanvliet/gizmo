@@ -40,7 +40,7 @@ for f in fib:
     print(f)
 
 #%%
-f = gizmo.get_fibonacci_sequence(7)
+f = gizmo.get_fibonacci_sequence(5)
 print(f)
 
 #%%

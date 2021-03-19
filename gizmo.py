@@ -50,7 +50,7 @@ class Gizmo:
 
 # ------------------- Exercise 8-9 --------------------
 
-def multiplication_table(zom=None):
+def multiplication_table(zero_out_multiples=None):
     """Times table with optional dropping of multiples
     
     Returns the times table for integers up to 12, and optionally
@@ -70,22 +70,20 @@ def multiplication_table(zom=None):
 
     v = np.arange(1,13)
     tab = np.outer(v,v)
-    if type(zom) == int:
-        tab[tab%zom == 0] = 0
+    if type(zero_out_multiples) == int:
+        tab[tab%zero_out_multiples == 0] = 0
     return tab
 
 # ------------------- Exercise 11 --------------------
 
 def generate_fibonacci_sequence(n):
     first=0
-    yield first
     second=1
-    yield second
     for i in range(n):
-        this = first+second
+        yield first
+        third = first+second
         first = second
-        second = this
-        yield this
+        second = third
 
 # ------------------- Exercise 12 --------------------
 
