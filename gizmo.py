@@ -50,7 +50,7 @@ def multiplication_table(zero_out_multiples=None):
 
     Returns
     -------
-    array : numpy ndarray
+    array : ndarray
         A two-dimensional NumPy array that contains the multiplication table 
         from 1 to 12 with the multiples of zero_out_multiples paramaters 
         passed as argument set to zero. 
@@ -77,3 +77,5 @@ def generate_fibonacci_sequence(n):
             second_fibonacci_number, first_fibonacci_number + \
                 second_fibonacci_number
 
+def get_fibonacci_sequence(n):
+    return np.fromiter(generate_fibonacci_sequence(n), int)
