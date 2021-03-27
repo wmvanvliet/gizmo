@@ -58,7 +58,8 @@ def multiplication_table(zero_out_multiples=None):
     """
     a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     array = np.outer(a, a)
-    array[array % zero_out_multiples == 0] = 0
+    if zero_out_multiples != None:
+        array[array % zero_out_multiples == 0] = 0
     return array
     
 def generate_fibonacci_sequence(n):
@@ -87,5 +88,5 @@ def get_titanic():
 
 def get_titanic_children():
     titanic = pd.read_csv("titanic.csv")
-    children_below_12 = titanic[titanic["age"] < 12]
+    children_below_12 = titanic[titanic["age"] <= 12]
     return children_below_12
