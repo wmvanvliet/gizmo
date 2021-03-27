@@ -60,5 +60,20 @@ def multiplication_table(zero_out_multiples=None):
     array[array % zero_out_multiples == 0] = 0
     return array
     
+def generate_fibonacci_sequence(n):
 
+    fibonacci_sequence_first = 0
+    fibonacci_sequence_second = 1
+
+    if n <= 0:
+        print("Invalid input, enter a positive integer")
+        quit()
+
+    first_fibonacci_number, second_fibonacci_number = 0, 1
+
+    for _ in range(n):
+        yield first_fibonacci_number
+        first_fibonacci_number, second_fibonacci_number = \
+            second_fibonacci_number, first_fibonacci_number + \
+                second_fibonacci_number
 
