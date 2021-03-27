@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 def hello(name, country='Finland'):
     print(f"Hello {name}, how are things in {country}?")
@@ -79,3 +80,12 @@ def generate_fibonacci_sequence(n):
 
 def get_fibonacci_sequence(n):
     return np.fromiter(generate_fibonacci_sequence(n), int)
+
+def get_titanic():
+    titanic = pd.read_csv("titanic.csv")
+    return titanic
+
+def get_titanic_children():
+    titanic = pd.read_csv("titanic.csv")
+    children_below_12 = titanic[titanic["age"] < 12]
+    return children_below_12
