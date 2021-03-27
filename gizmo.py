@@ -69,7 +69,6 @@ def generate_fibonacci_sequence(n):
 
     if n <= 0:
         print("Invalid input, enter a positive integer")
-        quit()
 
     first_fibonacci_number, second_fibonacci_number = 0, 1
 
