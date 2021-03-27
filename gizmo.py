@@ -58,7 +58,7 @@ def multiplication_table(zero_out_multiples=None):
     """
     a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     array = np.outer(a, a)
-    if zero_out_multiples != None:
+    if zero_out_multiples is not None:
         array[array % zero_out_multiples == 0] = 0
     return array
     
