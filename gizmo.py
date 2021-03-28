@@ -41,7 +41,7 @@ def multiplication_table(zero_out_multiples=None):
     Returns a two-dimensional NumPy array that contains the multiplication 
     table from 1 to 12.  
     
-    Paramateres
+    Parameters
     -----------
     zero_out_multiples : int, optional
         When this parameter is set to an integer number, then the 
