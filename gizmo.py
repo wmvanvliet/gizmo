@@ -43,7 +43,7 @@ def multiplication_table(zero_out_multiples=None):
     
     Paramateres
     -----------
-    zero_out_multiples : int
+    zero_out_multiples : int, optional
         When this parameter is set to an integer number, then the 
         multiplication table that is returned by the function will have all
         multiples of the given number set to zero. The default value of this 
