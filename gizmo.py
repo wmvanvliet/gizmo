@@ -7,17 +7,25 @@ def hello(name, country='Finland'):
 
 def spell(word):
 
+    output = ""
     for i,l in enumerate(word):
-        if i==len(word)-1:
-            print(l)
+        if i == len(word)-1:
+            output = output + l
         else:
-            print(l+'.')
+            output = output + l + "."
+
+    print(output)
 
 def relative_path(ids):
+
+    list = []
     path_base = './subjects/mock_recording_'
     suffix = '.rec'
     for id in ids:
-        print(path_base + id + suffix)
+        list.append(path_base + id + suffix)
+        #print(path_base + id + suffix)
+
+    return list
 
 def multiplication_table(zero_out_multiples: int = None):
     """Multiplication table for integers from 1 to 12.
@@ -27,12 +35,12 @@ def multiplication_table(zero_out_multiples: int = None):
 
     Parameters
     ----------
-    zero_out_multiples: int
+    zero_out_multiples : int
         Sets all numbers that are multipliers of this parameter to 0.
 
     Returns
     -------
-    m_table: numpy array
+    m_table : numpy array
         A numpy array with the multiplication values i*j.
     """
     nums = np.array(range(1,13))
@@ -40,24 +48,32 @@ def multiplication_table(zero_out_multiples: int = None):
         return np.outer(nums, nums)
     else:
         print("tetst: ", zero_out_multiples, '-->', [nums % zero_out_multiples == 0])
-        nums[nums % zero_out_multiples == 0] = 0
+
         print("nums: ", nums)
         m_table = np.outer(nums, nums)
+        m_table[m_table % zero_out_multiples == 0] = 0
         return m_table
 
 def generate_fibonacci_sequence(n):
 
-    i = 1
-    seq = [0]
-    yield seq[-1]
+    if n == 0:
+        yield []
 
-    i = 2
-    seq = [0, 1]
-    yield seq[-1]
-
-    for i in range(1, n-1):
-        seq.append(seq[i-1] + seq[i])
+    if n == 1:
+        seq = [0]
         yield seq[-1]
+
+    if n == 2:
+        yield 0
+        yield 1
+
+    if n > 2:
+        seq = [0, 1]
+        yield 0
+        yield 1
+        for i in range(1, n-1):
+            seq.append(seq[i-1] + seq[i])
+            yield seq[-1]
 
 def get_fibonacci_sequence(n):
     res_array = np.empty(n)
