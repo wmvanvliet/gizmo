@@ -56,8 +56,6 @@ def multiplication_table(zero_out_multiples: int = None):
 
 def generate_fibonacci_sequence(n):
 
-    if n == 0:
-        yield []
 
     if n == 1:
         seq = [0]
