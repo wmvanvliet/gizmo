@@ -59,7 +59,16 @@ def generate_fibonacci_sequence(n):
         x, y = y, x+y
         yield x
         
+def get_fibonacci_sequence(n):
     
+    fib = generate_fibonacci_sequence(n)
+    list = []
+    for i in range(n):
+        list.append(next(fib))
+        
+    return numpy.array(list)
+        
+        
     
     
     
