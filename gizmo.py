@@ -25,12 +25,12 @@ class Gizmo:
     def speak(self):
         print(self.name)
         
-def multiplication_table(zero_out_multiples):
+def multiplication_table(zero_out_multiples = None):
     vector = list(range(1,13))
     table = numpy.outer(vector,vector)
+    if zero_out_multiples != None:
+        inds = table % zero_out_multiples == 0
+        table[inds] = 0
     return table
-
-            
-    
         
 
