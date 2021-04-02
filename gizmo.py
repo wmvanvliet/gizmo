@@ -14,3 +14,7 @@ def relative_path(identifiers):
         path_list.append('./subjects/mock_recording_{}.rec'.format(i))
     
     return path_list
+
+
+class Gizmo:
+    pass
