@@ -41,7 +41,8 @@ def multiplication_table(zero_out_multiples = None):
     
     table = numpy.outer(v,v)
     
-    table[table % zero_out_multiples == 0] = 0
+    if zero_out_multiples != None:
+        table[table % zero_out_multiples == 0] = 0
     
     return table
 
@@ -63,4 +64,5 @@ class Gizmo:
         
     def speak(self):
         print(self.name)
-             
+
+       
