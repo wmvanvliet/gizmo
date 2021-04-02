@@ -1,3 +1,5 @@
+import numpy
+
 def hello(name, country):
     
     print("Hello %s, how are things in %s?" % (name, country))
@@ -22,5 +24,13 @@ class Gizmo:
          
     def speak(self):
         print(self.name)
+        
+def multiplication_table():
+    vector = list(range(1,13))
+    table = numpy.outer(vector,vector)
+    return table
+
+            
+    
         
 
