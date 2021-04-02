@@ -19,3 +19,7 @@ def relative_path(identifiers):
 class Gizmo:
     def __init__(self, name):
         self.name = name
+        
+    def speak(self):
+        print(self.name)
+        
