@@ -17,6 +17,10 @@ def relative_path(subject_identifier):
     return names
 
 class Gizmo:
-     def __init__(name):
+    def __init__(self, name):
          self.name = name
+         
+    def speak(self):
+        print(self.name)
+        
 
