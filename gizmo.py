@@ -38,10 +38,9 @@ def multiplication_table(zero_out_multiples = None):
         This integer parameter zeros all elements of the multiplication table which are exact multiples of it.
     
     Returns
-    ----------
-    table: array
-        Table is the resultant multiplication table, modified based on the input parameter zero_out_multiples
-    
+    -------
+    table : array
+        Table is the resultant multiplication table, modified based on the input parameter zero_out_multiples.
     """
     vector = list(range(1,13))
     table = numpy.outer(vector,vector)
