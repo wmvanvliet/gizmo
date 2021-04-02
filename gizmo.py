@@ -30,8 +30,6 @@ def multiplication_table(zero_out_multiples):
     table = numpy.outer(vector,vector)
     return table
 
-hello("Joonas","Germany")
-
             
     
         
