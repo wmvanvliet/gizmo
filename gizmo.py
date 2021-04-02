@@ -57,6 +57,19 @@ def generate_fibonacci_sequence(n):
             x, y = y, x+y
             yield x
 
+def get_fibonacci_sequence(n):
+    list = []
+    
+    fib = generate_fibonacci_sequence(n)
+    
+    for i in range(n):
+        list.append(next(fib))
+    
+    # convert list to numpy array
+    arr = numpy.array(list)
+    
+    return arr        
+
 
 class Gizmo:
     def __init__(self, name):
@@ -65,4 +78,4 @@ class Gizmo:
     def speak(self):
         print(self.name)
 
-       
+     
