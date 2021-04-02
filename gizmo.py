@@ -17,10 +17,13 @@ def relative_path(identifiers):
     
     return path_list
 
-def multiplication_table():
+def multiplication_table(zero_out_multiples = None):
     v = list(range(1,13))
     
     table = numpy.outer(v,v)
+    
+    table[table % zero_out_multiples == 0] = 0
+    
     return table
 
 
@@ -31,4 +34,4 @@ class Gizmo:
     def speak(self):
         print(self.name)
         
-        
+      
