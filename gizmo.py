@@ -1,6 +1,6 @@
 import numpy
 
-def hello(name, country):
+def hello(name, country="Finland"):
     
     print("Hello %s, how are things in %s?" % (name, country))
     
@@ -25,10 +25,12 @@ class Gizmo:
     def speak(self):
         print(self.name)
         
-def multiplication_table():
+def multiplication_table(zero_out_multiples):
     vector = list(range(1,13))
     table = numpy.outer(vector,vector)
     return table
+
+hello("Joonas","Germany")
 
             
     
