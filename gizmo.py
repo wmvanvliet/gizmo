@@ -7,4 +7,10 @@ def spell(word):
         if i != len(word)-1:
             print(".",end='')
 
-
+def relative_path(identifiers):
+    path_list = []
+    
+    for i in identifiers:
+        path_list.append('./subjects/mock_recording_{}.rec'.format(i))
+    
+    return path_list
