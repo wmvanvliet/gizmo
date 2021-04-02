@@ -1,3 +1,5 @@
+import numpy
+
 def hello(name, country):
     print("Hello %s, how are things in %s?" % (name, country))
     
@@ -15,6 +17,12 @@ def relative_path(identifiers):
     
     return path_list
 
+def multiplication_table():
+    v = list(range(1,13))
+    
+    table = numpy.outer(v,v)
+    return table
+
 
 class Gizmo:
     def __init__(self, name):
@@ -22,4 +30,5 @@ class Gizmo:
         
     def speak(self):
         print(self.name)
+        
         
