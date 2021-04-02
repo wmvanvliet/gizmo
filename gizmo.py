@@ -28,21 +28,20 @@ class Gizmo:
         
 def multiplication_table(zero_out_multiples = None):
     """ Creates multiplication table from 1 to 12.
+    
     Creates multiplication table from 1 to 12. Optional input parameters zeros elements of the table,
     which are integer multiples of given input integer.
     
     Parameters
     ----------
     zero_out_multiples : int, optional (default is None)
-    This integer parameter zeros all elements of the multiplication table which are exact multiples of it.
+        This integer parameter zeros all elements of the multiplication table which are exact multiples of it.
     
     Returns
     ----------
     table: array
-    Table is the resultant multiplication table, modified based on the input parameter zero_out_multiples
+        Table is the resultant multiplication table, modified based on the input parameter zero_out_multiples
     
-
-
     """
     vector = list(range(1,13))
     table = numpy.outer(vector,vector)
@@ -57,8 +56,9 @@ def generate_fibonacci_sequence(n):
     for i in range(n):
         if i == 0:
             yield 0
-        x, y = y, x+y
-        yield x
+        else:
+            x, y = y, x+y
+            yield x
         
 def get_fibonacci_sequence(n):
     
