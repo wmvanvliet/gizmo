@@ -17,4 +17,6 @@ def relative_path(subject_identifier):
     return names
 
 class Gizmo:
-    pass
+     def __init__(name):
+         self.name = name
+
