@@ -46,11 +46,21 @@ def multiplication_table(zero_out_multiples = None):
     return table
 
 
+def generate_fibonacci_sequence(n):   
+    x = 0
+    y = 1
+    for i in range(n):
+        if i == 0:
+            yield x
+        else:
+            x, y = y, x+y
+            yield x
+
+
 class Gizmo:
     def __init__(self, name):
         self.name = name
         
     def speak(self):
         print(self.name)
-        
-      
+             
