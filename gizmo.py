@@ -1,4 +1,5 @@
 import numpy
+import pandas
 
 def hello(name, country = "Finland"):
     print("Hello %s, how are things in %s?" % (name, country))
@@ -71,11 +72,24 @@ def get_fibonacci_sequence(n):
     return arr        
 
 
+def get_titanic():
+    
+    # load csv file with pandas
+    titanic_dataframe = pandas.read_csv("titanic.csv")
+    
+    return titanic_dataframe
+
+def get_titanic_children():
+    
+    titanic = pandas.read_csv("titanic.csv")
+    children = titanic[titanic["age"] <= 12]
+    
+    return children
+
+
 class Gizmo:
     def __init__(self, name):
         self.name = name
         
     def speak(self):
         print(self.name)
-
-     
