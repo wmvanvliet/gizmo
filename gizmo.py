@@ -4,12 +4,14 @@ def hello(name, country):
     
 def spell(word):
     
-    for i in word:
-        print(i, end = '')
-        if i != word[-1]:
+    for i in range(0, len(word)):
+        print(word[i], end = '')
+        if i != len(word)-1:
             print(".", end = '')
-            
 
-    
-    
-spell("Joonas")
+def relative_path(subject_identifier):
+    names = []
+    for i in subject_identifier:
+        path= './subjects/mock_recording_%s.rec' % (i)
+        names.append(path)
+    return names
