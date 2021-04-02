@@ -51,17 +51,26 @@ def multiplication_table(zero_out_multiples = None):
     return table
 
 def generate_fibonacci_sequence(n):
-    sequence = [0,1]
-    counter = 2
-    if n == 1:
-        return 0 
-    elif n == 2:
-        return sequence
-    else:
-        while len(sequence) < n:
-            sequence.append((sequence[counter-2]+sequence[counter-1]))
-            counter = counter + 1
-        return sequence
+    x, y = 0, 1
+    
+    for i in range(n):
+        if i == 0:
+            yield 0
+        x, y = y, x+y
+        yield x
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
     
         
 
