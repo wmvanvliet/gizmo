@@ -49,5 +49,19 @@ def multiplication_table(zero_out_multiples = None):
         inds = table % zero_out_multiples == 0
         table[inds] = 0
     return table
+
+def generate_fibonacci_sequence(n):
+    sequence = [0,1]
+    counter = 2
+    if n == 1:
+        return 0 
+    elif n == 2:
+        return sequence
+    else:
+        while len(sequence) < n:
+            sequence.append((sequence[counter-2]+sequence[counter-1]))
+            counter = counter + 1
+        return sequence
+    
         
 
