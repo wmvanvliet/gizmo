@@ -18,6 +18,25 @@ def relative_path(identifiers):
     return path_list
 
 def multiplication_table(zero_out_multiples = None):
+    
+    """Multiplication table from 1 to 12.
+    
+    If input is an integer, the multiples of that integer are
+    zero in the returned multiplication table.
+    
+    Parameters
+    ----------
+    zero_out_multiples : int
+        Sets multiples of this value to zero in the 
+        returned array.
+    
+    Returns
+    -------
+    table : array
+        Multiplication table from 1 to 12.
+    """
+    
+    
     v = list(range(1,13))
     
     table = numpy.outer(v,v)
