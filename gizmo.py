@@ -55,7 +55,7 @@ def multiplication_table(a=1,b=12, zero_out_multiples=None):
         A multiplication table from a to b. 
     """ 
     temp = np.outer(list(range(a,b+1)),list(range(a,b+1)))
-    if zero_out_multipies is not None:
+    if zero_out_multiples is not None:
         temp[temp % zero_out_multiples == 0] = 0   
         
     return temp
