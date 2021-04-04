@@ -39,7 +39,7 @@ class Gizmo:
     def speak(self):
         return print(self.name)
     
-def multiplication_table(a=1,b=12, zero_out_multiplies=None):
+def multiplication_table(a=1,b=12, zero_out_multiples=None):
     """
     Creates a multiplication table from a to b. 
     
@@ -55,8 +55,8 @@ def multiplication_table(a=1,b=12, zero_out_multiplies=None):
         A multiplication table from a to b. 
     """ 
     temp = np.outer(list(range(a,b+1)),list(range(a,b+1)))
-    if zero_out_multiplies is not None:
-        temp[temp % zero_out_multiplies == 0] = 0   
+    if zero_out_multipies is not None:
+        temp[temp % zero_out_multiples == 0] = 0   
         
     return temp
 
