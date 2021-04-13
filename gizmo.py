@@ -47,18 +47,20 @@ def multiplication_table(zero_out_multiples=None):
     """
     import numpy as np
 
-    a=np.arange(1,13,1)
+    a=np.arange(1,13)
     
+
     if zero_out_multiples is not None and isinstance(zero_out_multiples, int):
+        res=np.outer(a,a)
         #Version with modulo
-        a[a%zero_out_multiples==0]=0  #okay, I learned something :-)
-  
+        #a[a%zero_out_multiples==0]=0  #okay, I learned something :-)
+        res[res%zero_out_multiples==0]=0
 
         #I found a version without modulo operator
         #index=zero_out_multiples-1
         #a[index::zero_out_multiples]=0
         #b[index::zero_out_multiples]=0
-        res=np.outer(a,a)
+        #res=np.outer(a,a)
     else:
         res=np.outer(a,a)
     
