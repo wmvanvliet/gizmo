@@ -52,20 +52,21 @@ def multiplication_table(zero_out_multiples=None):
         a=np.arange(1,13)
         res=np.outer(a,a)
 
-
-        #if zero_out_multiples is not None and not isinstance(zero_out_multiples, int):
-        if zero_out_multiples is not None and isinstance(zero_out_multiples, int):    
+        if zero_out_multiples is None:
+            return res
+        elif isinstance(zero_out_multiples, int):
             res[res%zero_out_multiples==0]=0
-
-        else:
+            return res
+        elif not isinstance(zero_out_multiples, int):
             raise ValueError("zero_out_multiples must be an integer.")
-
-        return res
-
+        
     except ValueError:
         #exit("zero_out_multiples must be an integer.")
-        print("zero_out_multiples must be an integer.")
+        print("ValueError found. zero_out_multiples must be an integer.")
     
+    finally:
+        return res
+   
 
 def generate_fibonacci_sequence(n):
     a, b = 1, 0
