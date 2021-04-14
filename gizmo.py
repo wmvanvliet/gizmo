@@ -48,7 +48,7 @@ def multiplication_table(zero_out_multiples=None):
     import numpy as np
 
         
-    try:
+   """  try:
         a=np.arange(1,13)
         res=np.outer(a,a)
 
@@ -63,8 +63,16 @@ def multiplication_table(zero_out_multiples=None):
     except ValueError:
         #exit("zero_out_multiples must be an integer.")
         print("ValueError found. zero_out_multiples must be an integer.")
-        return res
-    
+        return res """
+
+    # Marijn's version   
+    a = np.arange(1, 13)
+    res = np.outer(a, a)
+    if zero_out_multiples is not None:
+        if not isinstance(zero_out_multiples, int):
+            raise ValueError('zero_out_multiples must be an integer.')
+        res[res % zero_out_multiples == 0] = 0
+    return res
 
 
 def generate_fibonacci_sequence(n):
