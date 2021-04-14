@@ -102,7 +102,7 @@ def get_titanic():
     return titanic
     
     
- def get_titanic_children():
+def get_titanic_children():
     
     titanic_df = get_titanic()
     ages_le12 = titanic[titanic["Age"] >= 12]
