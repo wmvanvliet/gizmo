@@ -47,24 +47,25 @@ def multiplication_table(zero_out_multiples=None):
     """
     import numpy as np
 
-    a=np.arange(1,13)
-    
-
-    if zero_out_multiples is not None and isinstance(zero_out_multiples, int):
+        
+    try:
+        a=np.arange(1,13)
         res=np.outer(a,a)
-        #Version with modulo
-        #a[a%zero_out_multiples==0]=0  #okay, I learned something :-)
-        res[res%zero_out_multiples==0]=0
 
-        #I found a version without modulo operator
-        #index=zero_out_multiples-1
-        #a[index::zero_out_multiples]=0
-        #b[index::zero_out_multiples]=0
-        #res=np.outer(a,a)
-    else:
-        res=np.outer(a,a)
+
+        #if zero_out_multiples is not None and not isinstance(zero_out_multiples, int):
+        if zero_out_multiples is not None and isinstance(zero_out_multiples, int):    
+            res[res%zero_out_multiples==0]=0
+
+        else:
+            raise ValueError("zero_out_multiples must be an integer.")
+            
+        return res
+
+    except ValueError:
+        exit("zero_out_multiples must be an integer.")
+
     
-    return res
 
 def generate_fibonacci_sequence(n):
     a, b = 1, 0
