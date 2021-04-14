@@ -48,32 +48,33 @@ def multiplication_table(zero_out_multiples=None):
     import numpy as np
 
         
-    # try:
-    #     a=np.arange(1,13)
-    #     res=np.outer(a,a)
+    try:
+        a=np.arange(1,13)
+        res=np.outer(a,a)
 
-    #     if zero_out_multiples is None:
-    #         return res
-    #     elif isinstance(zero_out_multiples, int):
-    #         res[res%zero_out_multiples==0]=0
-    #         return res
-    #     elif not isinstance(zero_out_multiples, int):
-    #         raise ValueError("zero_out_multiples must be an integer.")
+        if zero_out_multiples is None:
+            return res
+        elif isinstance(zero_out_multiples, int):
+            res[res%zero_out_multiples==0]=0
+            return res
+        elif not isinstance(zero_out_multiples, int):
+            raise ValueError("zero_out_multiples must be an integer.")
         
-    # except ValueError:
-    #     #exit("zero_out_multiples must be an integer.")
-    #     print("ValueError found. zero_out_multiples must be an integer.")
-    #     return res 
+    except ValueError:
+        #exit("zero_out_multiples must be an integer.")
+        print("ValueError found. zero_out_multiples must be an integer.")
+        return res 
 
 
-    # Marijn's version   
-    a = np.arange(1, 13)
-    res = np.outer(a, a)
-    if zero_out_multiples is not None:
-        if not isinstance(zero_out_multiples, int):
-            raise ValueError('zero_out_multiples must be an integer.')
-        res[res % zero_out_multiples == 0] = 0
-    return res
+    # # Marijn's version   
+    # a = np.arange(1, 13)
+    # res = np.outer(a, a)
+    # if zero_out_multiples is not None:
+    #     if not isinstance(zero_out_multiples, int):
+    #         raise ValueError('zero_out_multiples must be an integer.')
+    #     res[res % zero_out_multiples == 0] = 0
+    # return res
+    # #Comment: Her test only ever sets zero_out_multiples to None or an integer value. So the ValueError is never raised during the test.
 
 
 def generate_fibonacci_sequence(n):
