@@ -63,10 +63,9 @@ def multiplication_table(zero_out_multiples=None):
     except ValueError:
         #exit("zero_out_multiples must be an integer.")
         print("ValueError found. zero_out_multiples must be an integer.")
-    
-    finally:
         return res
-   
+    
+
 
 def generate_fibonacci_sequence(n):
     a, b = 1, 0
