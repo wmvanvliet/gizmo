@@ -40,7 +40,7 @@ class Gizmo(object):
         
         return
       
-    def multiplication_table(self, zero_out_multiples=None):
+def multiplication_table(zero_out_multiples=None):
       
       mat = np.outer(np.arange(1,13,1),np.arange(1,13,1))
       
