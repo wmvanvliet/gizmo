@@ -73,8 +73,17 @@ def multiplication_table(zero_out_multiples=None):
           return mat
       
       
-#def generate_fibonacci_sequence(n):
+def generate_fibonacci_sequence(n):
+    n1 = 0
+    n2 = 1
     
+    it = 1
+    
+    while it <= n:
+        yield n1
+        it += 1
+        n1, n2 = n2, n1 + n2
+            
       
     
     
