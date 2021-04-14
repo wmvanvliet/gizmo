@@ -3,7 +3,7 @@ import numpy as np
 
 def hello(name, country='Finland'):
     
-    print('Helllo {}, how are things in {}?'.format(name,country))
+    print('Hello {}, how are things in {}?'.format(name,country))
     
     return
 
@@ -17,6 +17,7 @@ def spell(str_in):
     
     return
 
+
 def relative_path(subject_identifiers):
     
     rel_path = './subjects/mock_recording_'
@@ -25,7 +26,8 @@ def relative_path(subject_identifiers):
     file_list = [rel_path + elem + ext for elem in subject_identifiers]
     
     return file_list
-  
+
+
 class Gizmo(object):
   
     def __init__(self, name):
@@ -39,18 +41,18 @@ class Gizmo(object):
         print(self.name)
         
         return
-      
+
+
 def multiplication_table(zero_out_multiples=None):
       
       mat = np.outer(np.arange(1,13,1),np.arange(1,13,1))
       
       if zero_out_multiples is None:
-          print(mat)
+          return mat
       else:
           mat[mat % zero_out_multiples == 0] = 0
-          print(mat)
+          return mat
       
-      return
       
       
     
