@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import numpy as np
 
+
 def hello(name, country='Finland'):
     
     print('Hello {}, how are things in {}?'.format(name,country))
@@ -44,7 +45,25 @@ class Gizmo(object):
 
 
 def multiplication_table(zero_out_multiples=None):
+      """Multiplication table from 1 to 12
       
+      This function returns a dim(2) matrix contasining the multiplication
+      table from 1 to 12. If parameter zero_out_multiples is set to an
+      integer value all matrix elements multiple of this value are set
+      to zero.
+      
+      Parameters
+      ----------
+      zero_out_multiples : int, optional
+          If default (None) returns 2x2 matrix as is, 
+          if integer sets to 0 the multiples of zero_out_multiples
+      
+      Returns
+      -------
+      mat : numpy.ndarray
+          Matrix with dimension 2 containing multiplication table
+          up to 12 with values set to zero according to zero_out_multiples
+      """
       mat = np.outer(np.arange(1,13,1),np.arange(1,13,1))
       
       if zero_out_multiples is None:
@@ -54,6 +73,8 @@ def multiplication_table(zero_out_multiples=None):
           return mat
       
       
+#def generate_fibonacci_sequence(n):
+    
       
     
     
