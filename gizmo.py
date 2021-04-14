@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import numpy as np
-
+import pandas as pd
 
 def hello(name, country='Finland'):
     
@@ -83,7 +83,28 @@ def generate_fibonacci_sequence(n):
         yield n1
         it += 1
         n1, n2 = n2, n1 + n2
-            
+
+def get_fibonacci_sequence(n):
+    
+    lst_fib = []
+    fib = generate_fibonacci_sequence(n)
+    for ii in range(0, n):
+        lst_fib.append(next(fib))
+    res = np.array(lst_fib)
+    
+    return res
       
     
+def get_titanic():
     
+    titanic = pd.read_csv('titanic.csv')
+    
+    return titanic
+    
+    
+ def get_titanic_children():
+    
+    titanic_df = get_titanic()
+    ages_le12 = titanic[titanic["Age"] >= 12]
+    
+    return age_le12
