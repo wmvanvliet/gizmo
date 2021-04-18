@@ -10,7 +10,7 @@ def spell(s):
     res = ""
     for l in s:
         res += l + '.'
-    return res[:-1]
+    print(res[:-1])
 
 
 def relative_path(ids):
