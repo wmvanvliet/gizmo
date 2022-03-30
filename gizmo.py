@@ -26,28 +26,29 @@ class Gizmo:
     def speak(self):
         print(self.name)
 
-    def generate_fibonacci_sequence(n):
-        """Generate the first n Fibonacci numbers.
 
-        The Fibonacci sequence starts with [0, 1]. Then, each next number is
-        the sum of the previous two numbers.
+def generate_fibonacci_sequence(n):
+    """Generate the first n Fibonacci numbers.
 
-        Parameters
-        ----------
-        n : int
-            The number of Fibonacci numbers to generate.
+    The Fibonacci sequence starts with [0, 1]. Then, each next number is
+    the sum of the previous two numbers.
 
-        Yields
-        ------
-        x : int
-            The next Fibonacci number.
-        """
-        a, b = 0, 1
-        for i in n:
-            if i == 0:
-                yield a
-            elif i == 1:
-                yield b
-            else:
-                a, b = b, a + b
-                yield b
+    Parameters
+    ----------
+    n : int
+        The number of Fibonacci numbers to generate.
+
+    Yields
+    ------
+    x : int
+        The next Fibonacci number.
+    """
+    a, b = 0, 1
+    for i in range(n):
+        if i == 0:
+            yield a
+        elif i == 1:
+            yield b
+        else:
+            a, b = b, a + b
+            yield b
