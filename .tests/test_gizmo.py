@@ -82,63 +82,7 @@ def test_ex7(capsys):
 
 
 def test_ex8():
-    """Ex8: Add a NumPy array"""
-    import numpy as np
-    from numpy.testing import assert_equal
-    import gizmo
-    assert hasattr(gizmo, 'multiplication_table')
-    assert hasattr(gizmo.multiplication_table, '__call__')
-    prod_table = gizmo.multiplication_table()
-    assert type(prod_table) == np.ndarray
-    ref_table = np.outer(np.arange(1, 13), np.arange(1, 13))
-    assert_equal(prod_table, ref_table)
-
-
-def test_ex9():
-    """Ex9: Use Numpy's fancy indexing"""
-    import numpy as np
-    from numpy.testing import assert_equal
-    import gizmo
-    assert hasattr(gizmo, 'multiplication_table')
-    assert hasattr(gizmo.multiplication_table, '__call__')
-    prod_table = gizmo.multiplication_table()
-    assert type(prod_table) == np.ndarray
-    ref_table = np.outer(np.arange(1, 13), np.arange(1, 13))
-    assert_equal(prod_table, ref_table)
-
-    # Test zero_out_multiples parameter
-    assert_equal(prod_table, gizmo.multiplication_table(None))
-
-    # We don't check 0, it's fine to let it raise exceptions in that case
-    for n in range(1, 13):
-        prod_table_without_n = gizmo.multiplication_table(zero_out_multiples=n)
-        assert type(prod_table_without_n) == np.ndarray
-        ref_table_without_n = ref_table.copy()
-        ref_table_without_n[ref_table_without_n % n == 0] = 0
-        assert_equal(prod_table_without_n, ref_table_without_n)
-
-
-def test_ex10():
-    """Ex10: Document your function using numpydoc"""
-    from numpydoc.docscrape import FunctionDoc
-    import gizmo
-    assert hasattr(gizmo, 'multiplication_table')
-    assert hasattr(gizmo.multiplication_table, '__doc__')
-    doc = FunctionDoc(gizmo.multiplication_table)
-    assert doc['Summary'] != ''
-    assert doc['Extended Summary'] != ''
-    assert len(doc['Parameters']) == 1
-    assert doc['Parameters'][0].name != ''
-    assert doc['Parameters'][0].type != ''
-    assert doc['Parameters'][0].desc != ''
-    assert len(doc['Returns']) == 1
-    assert doc['Returns'][0].name != ''
-    assert doc['Returns'][0].type != ''
-    assert doc['Returns'][0].desc != ''
-
-
-def test_ex11():
-    """Ex11: Build a generator"""
+    """Ex8: Build a generator"""
     import gizmo
     assert hasattr(gizmo, 'generate_fibonacci_sequence')
     assert hasattr(gizmo.generate_fibonacci_sequence, '__call__')
@@ -175,48 +119,20 @@ def test_ex11():
         next(gizmo.generate_fibonacci_sequence(0))
 
 
-def test_ex12():
-    """Ex12: Build a NumPy array from a generator"""
+def test_ex9():
+    """Ex9: Document your function using numpydoc"""
+    from numpydoc.docscrape import FunctionDoc
     import gizmo
-    import numpy as np
-    from numpy.testing import assert_equal
-    assert hasattr(gizmo, 'get_fibonacci_sequence')
-    assert hasattr(gizmo.get_fibonacci_sequence, '__call__')
-    assert_equal(gizmo.get_fibonacci_sequence(3), np.array([0, 1, 1]))
-    assert_equal(gizmo.get_fibonacci_sequence(10),
-                 np.array([0, 1, 1, 2, 3, 5, 8, 13, 21, 34]))
-
-
-def test_ex13():
-    """Ex13: Read a CSV file with Pandas"""
-    from numpy.testing import assert_equal
-    import numpy as np
-    import gizmo
-    assert hasattr(gizmo, 'get_titanic')
-    assert hasattr(gizmo.get_titanic, '__call__')
-    df = gizmo.get_titanic()
-    assert len(df) == 891
-    assert_equal(
-        df.columns.values,
-        np.array([
-            'survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
-            'embarked', 'class', 'who', 'adult_male', 'deck', 'embark_town',
-            'alive', 'alone']))
-
-
-def test_ex14():
-    """Ex14: Select rows from a Pandas DataFrame"""
-    from numpy.testing import assert_equal
-    import numpy as np
-    import gizmo
-    assert hasattr(gizmo, 'get_titanic_children')
-    assert hasattr(gizmo.get_titanic_children, '__call__')
-    df = gizmo.get_titanic_children()
-    assert len(df) == 69
-    assert_equal(
-        df.columns.values,
-        np.array([
-            'survived', 'pclass', 'sex', 'age', 'sibsp', 'parch', 'fare',
-            'embarked', 'class', 'who', 'adult_male', 'deck', 'embark_town',
-            'alive', 'alone']))
-    assert np.all(df.age <= 12)
+    assert hasattr(gizmo, 'multiplication_table')
+    assert hasattr(gizmo.multiplication_table, '__doc__')
+    doc = FunctionDoc(gizmo.multiplication_table)
+    assert doc['Summary'] != ''
+    assert doc['Extended Summary'] != ''
+    assert len(doc['Parameters']) == 1
+    assert doc['Parameters'][0].name != ''
+    assert doc['Parameters'][0].type != ''
+    assert doc['Parameters'][0].desc != ''
+    assert len(doc['Returns']) == 1
+    assert doc['Returns'][0].name != ''
+    assert doc['Returns'][0].type != ''
+    assert doc['Returns'][0].desc != ''
