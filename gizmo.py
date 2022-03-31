@@ -6,7 +6,7 @@ Gizmo Challenge File
 '''
 
 def hello(name,country='Finland'):
-    print("Hello {name}, how are things in {country}".format(name=name,country=country))
+    print("Hello {name}, how are things in {country}?".format(name=name,country=country))
     
 
 def spell(word):
