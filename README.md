@@ -147,7 +147,7 @@ StopIteration
 
 
 ## Exercise 9: Document your function using numpydoc
-Add a docstring to the `multiplication_table` function. Use the "numpydoc" style
+Add a docstring to the `generate_fibonacci_sequence` function. Use the "numpydoc" style
 for this documentation. The documentation should contain:
 
  1. Short summary: a one-line description of what the function does.
@@ -156,10 +156,10 @@ for this documentation. The documentation should contain:
      1. The parameter name
      2. Its expected type (int, bool, str, array, ...)
      3. What the parameter does
- 4. Returns: a list of all values returned by the function. For each return value,  describe:
-     1. The returned value's name
+ 4. Yields: a list of all values yielded by the generator. For each return value,  describe:
+     1. The yielded value's name
      2. Its type (int, bool, str, array, ...)
-     3. What the returned value means
+     3. What the yielded value means
 
 [Learn about docstrings](https://docs.python.org/3.6/tutorial/controlflow.html#documentation-strings)  
 [Learn about the numpydoc documentation style](https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard)
