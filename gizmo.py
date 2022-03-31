@@ -4,8 +4,6 @@ Gizmo Challenge File
 
 @author: thomas
 '''
-from spyder.app import start
-
 
 def hello(name,country='Finland'):
     print("Hello {name}, how are things in {country}".format(name=name,country=country))
