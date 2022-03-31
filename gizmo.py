@@ -11,12 +11,12 @@ def hello(name,country='Finland'):
 
 def spell(word):
     spelled = ''
-    for i in range(len(word)-1):
-        spelled += word[i]+'.'
+    for letter in word[:-1]:
+        spelled += letter+'.'
     print(spelled + word[-1])
 
-def relative_path(subjects, basepath='./subjects/mock_recording_', extension='.rec' ):
-    return [basepath + subj + extension for subj in subjects]
+def relative_path(subjects, basename='./subjects/mock_recording_', extension='.rec' ):
+    return [(basename + '{subj}' + extension).format(subj=subj) for subj in subjects]
 
 class Gizmo:
     
@@ -37,21 +37,21 @@ class Gizmo:
         Parameters
         ----------
         maxcount: int
-                  The number of fibonacci numbers to be yielded by the generator.
+            The number of fibonacci numbers to be yielded by the generator.
         
         Yields
         -------        
         fibonacci: int
-                   The n-th number yielded is the n-th fibonacci number  
+            The n-th number yielded is the n-th fibonacci number  
          
         """
         last = 0
         yield last
-        start = 1
-        yield start
+        current = 1
+        yield current
         for i in range(maxcount-2):
-            current = start+last
-            last = start
-            start = current
-            yield current    
+            next = current+last
+            last = current
+            current = next
+            yield next    
     
