@@ -28,12 +28,12 @@ def generate_fibonacci_sequence(maxcount):
         
     Parameters
     ----------
-    maxcount: int
+    maxcount : int
         The number of fibonacci numbers to be yielded by the generator.
         
     Yields
     ------        
-    fibonacci: int
+    fibonacci : int
         The n-th number yielded is the n-th fibonacci number  
      
     """
