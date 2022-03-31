@@ -19,13 +19,12 @@ def relative_path(subjects, basename='./subjects/mock_recording_', extension='.r
     return [(basename + '{subj}' + extension).format(subj=subj) for subj in subjects]
 
 
-def generate_fibonacci_sequence(self,maxcount):
+def generate_fibonacci_sequence(maxcount):
     """ This function returns a fibonacci number generator.
     
     generate_fibonacci_sequence(maxcount)
         
-    The returned generator yields fibonacci numbers up to the maximum number indicated.
-    Note, that at least 2 numbers are always yielded!
+    The returned generator yields fibonacci numbers up to the maximum number indicated.    
         
     Parameters
     ----------
@@ -38,15 +37,11 @@ def generate_fibonacci_sequence(self,maxcount):
         The n-th number yielded is the n-th fibonacci number  
      
     """
-    last = 0
-    yield last
-    current = 1
-    yield current
-    for i in range(maxcount-2):
-        next = current+last
-        last = current
-        current = next
-        yield next    
+    start = (0,1)    
+    for i in range(maxcount):
+        current = start[0]
+        start = (start[0]+start[1],current)        
+        yield current
 
 
 class Gizmo:
