@@ -23,7 +23,7 @@ class Gizmo:
         self.name = name
     
     def speak(self):
-        return self.name
+        print(self.name)
 
 def generate_fibonacci_sequence(n):
     """ Generates first n numbers of the fibonacci sequence.
@@ -39,7 +39,7 @@ def generate_fibonacci_sequence(n):
     
     Yields
     ------
-    generator
+    fib : generator
          Generator that contains the first n fibonacci numbers
         """
     
