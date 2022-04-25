@@ -2,7 +2,7 @@ from functools import lru_cache
 
 # Test gizmo file
 def hello(name, country='Finland'):
-  print('Hello {name}, how are things in {country}?')
+  print(f'Hello {name}, how are things in {country}?')
 
 def spell(name):
   total_chars = len(name)
