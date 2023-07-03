@@ -6,7 +6,7 @@ class Gizmo:
         print (self.name)
 
 def hello(name, country = "finland"):
-    print("Hello ", name, ", how are things in ", country, "?")
+    print("Hello ",name,", how are things in ",country,"?")
 
 def spell(woord):
     teller = 1
