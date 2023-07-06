@@ -10,8 +10,8 @@ def hello(name, country = "finland"):
 
 def spell(woord):
     teller = 1
-    for i in woord:
-        print(i, end='')
+    for letter in woord:
+        print(letter, end='')
         if teller < len(woord):
             print(".", end='')
         teller += 1
