@@ -20,7 +20,7 @@ def spell(woord):
 def relative_path(identifiers):
     i = 0
     for identifier in identifiers:
-        identifiers[i] = "./subjects/mock_recording_" + identifier + ".rec"
+        identifiers[i] = f"./subjects/mock_recording_{identifier}.rec"
         i += 1
     return identifiers
 
