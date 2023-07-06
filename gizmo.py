@@ -25,27 +25,30 @@ def relative_path(identifiers):
     return identifiers
 
 def generate_fibonacci_sequence(nums):
-    """ Short summary:
+    """ __doc__
+    
+        Summary
 
         This function generates a fibonacci sequence until the given maximum (nums)
-    """
-
-    """ Extended summary:
+    
+        Extended Summary
 
         This function generates a fibonacci sequence. It will take one parameter to define
         the number of iterations to peform.
 
         Parameters
         ----------
-        nums : type int
-               Defines the number of ietration to perform
+        Parameters.name = nums
+        Parameters.type = int
+        Parameters.desc = Defines the number of ietration to perform
 
         Yields
         ------
-        x    : type int
-               The value is the next number in the fibonacci sequence.
+        Yields.name = x
+        Yields.type = int
+        Yields.desc = The value is the next number in the fibonacci sequence
 
-        """
+    """
 
     x, y = 0, 1
     for _ in range(nums):
