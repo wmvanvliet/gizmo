@@ -5,10 +5,10 @@ class Gizmo:
     def speak(self):
         print (self.name)
 
-def hello(self, name, country = "Finland"):
-    print("Hello " + name + " How's life in " + country + "?")
-
-def spell(self, woord):
+def hello(name, country = "Finland"):
+    print("Hello " + name + ", how are things in " + country + "?")
+    
+def spell(woord):
     teller = 1
     for letter in woord:
         print(letter, end='')
@@ -17,14 +17,14 @@ def spell(self, woord):
         teller += 1
     print()
 
-def relative_path(self, identifiers):
+def relative_path(identifiers):
     i = 0
     for identifier in identifiers:
         identifiers[i] = f"./subjects/mock_recording_{identifier}.rec"
         i += 1
     return identifiers
 
-def generate_fibonacci_sequence(self, nums):
+def generate_fibonacci_sequence(nums):
     """ Short summary:
 
         This function generates a fibonacci sequence until the given maximum (nums)
